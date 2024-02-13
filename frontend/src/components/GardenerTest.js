@@ -13,7 +13,6 @@ export default function GardenerTest() {
       <br />
 
       <button onClick={() => dispatch(increment())}> Increment </button>
-      <br />
       <button onClick={() => dispatch(decrement())}> Decrement </button>
     </main>
   );

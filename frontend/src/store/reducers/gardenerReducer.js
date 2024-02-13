@@ -4,7 +4,7 @@ const initialState = {
   value: 0,
 }
 export const gardenerReducer = createSlice({
-  name: 'counter',
+  name: 'gardener',
   initialState,
   reducers: {
     increment: (state) => {
@@ -17,6 +17,6 @@ export const gardenerReducer = createSlice({
 })
 
 export const { increment, decrement } = gardenerReducer.actions
-export const selectValue = (state) => state.counter.value;
+export const selectValue = (state) => state.gardener.value;
 
 export default gardenerReducer.reducer
