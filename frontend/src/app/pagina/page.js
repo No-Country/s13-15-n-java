@@ -1,4 +1,4 @@
-import GardenerTest from "../../components/gardenerTest";
+import GardenerTest from "../../components/GardenerTest"
 export default function Home() {
 
   return (
