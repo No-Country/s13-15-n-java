@@ -1,0 +1,139 @@
+{
+  "jardineros": [
+    {
+      "id": "1",
+      "nombre": "John",
+      "apellido": "Doe",
+      "correo": "johndoe@example.com",
+      "ciudad": "New York"
+    },
+    {
+      "id": "2",
+      "nombre": "Jane",
+      "apellido": "Smith",
+      "correo": "janesmith@example.com",
+      "ciudad": "Los Angeles"
+    },
+    {
+      "id": "3",
+      "nombre": "Michael",
+      "apellido": "Johnson",
+      "correo": "michaeljohnson@example.com",
+      "ciudad": "Chicago"
+    },
+    {
+      "id": "4",
+      "nombre": "Emily",
+      "apellido": "Brown",
+      "correo": "emilybrown@example.com",
+      "ciudad": "Houston"
+    },
+    {
+      "id": "5",
+      "nombre": "Daniel",
+      "apellido": "Taylor",
+      "correo": "danieltaylor@example.com",
+      "ciudad": "Phoenix"
+    },
+    {
+      "id": "6",
+      "nombre": "Olivia",
+      "apellido": "Miller",
+      "correo": "oliviamiller@example.com",
+      "ciudad": "Philadelphia"
+    },
+    {
+      "id": "7",
+      "nombre": "David",
+      "apellido": "Anderson",
+      "correo": "davidanderson@example.com",
+      "ciudad": "San Antonio"
+    },
+    {
+      "id": "8",
+      "nombre": "Sophia",
+      "apellido": "Thomas",
+      "correo": "sophiathomas@example.com",
+      "ciudad": "San Diego"
+    },
+    {
+      "id": "9",
+      "nombre": "James",
+      "apellido": "Jackson",
+      "correo": "jamesjackson@example.com",
+      "ciudad": "Dallas"
+    },
+    {
+      "id": "10",
+      "nombre": "Ava",
+      "apellido": "White",
+      "correo": "avawhite@example.com",
+      "ciudad": "San Jose"
+    }
+  ],
+  "propietarios": [
+    {
+      "nombre": "John",
+      "apellido": "Doe",
+      "correo": "johndoe@example.com",
+      "ciudad": "New York"
+    },
+    {
+      "nombre": "Jane",
+      "apellido": "Smith",
+      "correo": "janesmith@example.com",
+      "ciudad": "Los Angeles"
+    },
+    {
+      "nombre": "Michael",
+      "apellido": "Johnson",
+      "correo": "michaeljohnson@example.com",
+      "ciudad": "Chicago"
+    },
+    {
+      "nombre": "Emily",
+      "apellido": "Williams",
+      "correo": "emilywilliams@example.com",
+      "ciudad": "Houston"
+    },
+    {
+      "nombre": "Daniel",
+      "apellido": "Brown",
+      "correo": "danielbrown@example.com",
+      "ciudad": "Phoenix"
+    },
+    {
+      "nombre": "Olivia",
+      "apellido": "Jones",
+      "correo": "oliviajones@example.com",
+      "ciudad": "Philadelphia"
+    },
+    {
+      "nombre": "David",
+      "apellido": "Garcia",
+      "correo": "davidgarcia@example.com",
+      "ciudad": "San Antonio"
+    },
+    {
+      "nombre": "Sophia",
+      "apellido": "Martinez",
+      "correo": "sophiamartinez@example.com",
+      "ciudad": "San Diego"
+    },
+    {
+      "nombre": "Matthew",
+      "apellido": "Lopez",
+      "correo": "matthewlopez@example.com",
+      "ciudad": "Dallas"
+    },
+    {
+      "nombre": "Emma",
+      "apellido": "Lee",
+      "correo": "emmalee@example.com",
+      "ciudad": "San Jose"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
