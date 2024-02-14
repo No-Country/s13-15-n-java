@@ -8,7 +8,7 @@ import com.nocountry.s13g15.entities.Usuario;
 import java.util.List;
 
 public interface IUsuarioService {
-    UsuarioResponseDto registrarUsuario(UsuarioRequestDto usuarioRequestDto);
+    UsuarioResponseDto registrarUsuario(UsuarioRequestDto usuarioRequestDto, Long rolPropietario);
     List<Usuario> obtenerUsuarios();
 
 }
