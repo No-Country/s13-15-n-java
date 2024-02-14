@@ -34,14 +34,14 @@ public class UsuarioServiceImpl implements IUsuarioService {
     private final CiudadRepository ciudadRepository;
     private final PasswordEncoder passwordEncoder;
     @Override
-    public UsuarioResponseDto registrarUsuario(UsuarioRequestDto usuarioRequestDto) {
+    public UsuarioResponseDto registrarUsuario(UsuarioRequestDto usuarioRequestDto, Long rolPropietario) {
         Usuario usuario = usuarioRequestToUsuario.toUsuario(usuarioRequestDto);
         usuario.setFechaRegistro(Date.from(LocalDateTime.now().atZone(ZoneId.systemDefault()).toInstant()));
         usuario.setClave(passwordEncoder.encode(usuarioRequestDto.getClave()));
 
 
 
-        Rol rolAprendiz = rolRepository.findById(1L).orElse(null);
+        Rol rolAprendiz = rolRepository.findById(rolPropietario).orElse(null);
         usuario.setRol(rolAprendiz);
 
         Ciudad ciudad = ciudadRepository.findById(usuarioRequestDto.getCiudadId()).orElse(null);
