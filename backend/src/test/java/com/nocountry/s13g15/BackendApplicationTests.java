@@ -1,6 +1,5 @@
-package com.nocountry.c15g39n;
+package com.nocountry.s13g15;
 
-import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
