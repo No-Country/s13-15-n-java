@@ -20,42 +20,32 @@ import javax.persistence.TemporalType;
 import java.util.Date;
 
 @Entity
-@Table(name = "usuarios")
+@Table(name = "historial_trabajos")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-public class Usuario {
-
-
+public class HistorialTrabajo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Long id;
 
-    @Column(name = "nombre", length = 100)
-    private String nombre;
-    @Column(name = "apellido", length = 100)
-    private String apellido;
-    @Column(name = "correo", nullable = false, unique = true)
-    private String correo;
-    private String clave;
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "fecha_registro")
-    private Date fechaRegistro;
+    @Column(name = "fecha_inicio")
+    private Date fechaInicio;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "fecha_fin")
+    private Date fechaFin;
+
+    @Column(name = "pago_total")
+    private Double pagoTotal;
+
+    @Column(name = "estado_trabajo")
+    private String estadoTrabajo;
 
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
-    @JoinColumn(name = "perfil_id")
-    private Perfil perfil;
-
-    @ManyToOne
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    @JoinColumn(name = "ciudad_id", nullable = false)
-    private Ciudad ciudad;
-
-    @ManyToOne
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    @JoinColumn(name = "rol_id", nullable = false)
-    private Rol rol;
-
+    @JoinColumn(name = "proceso_trabajo_id", nullable = false)
+    private ProcesoTrabajo procesoTrabajo;
 }
