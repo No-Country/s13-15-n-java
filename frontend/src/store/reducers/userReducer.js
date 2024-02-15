@@ -11,10 +11,11 @@ export const userReducer = createSlice({
   initialState,
   reducers: {
     userLogin: (state, data) => {
-      state.name = data.name;
-      state.lastName = data.lastName;
-      state.city = data.city;
-      state.email = data.email;
+
+      state.name = data.payload.nombre;
+      state.lastName = data.payload.apellido;
+      state.city = data.payload.ciudad;
+      state.email = data.payload.correo;
     },
   },
 })

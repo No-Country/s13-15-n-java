@@ -20,7 +20,7 @@ export default function Home() {
   const handleClick = () => {
     try {
       authUser(password).then((res) => {
-        dispatch(userLogin(...res.data))
+        dispatch(userLogin(res.data))
         router.push('/profile')
       })
     } catch (error) {
