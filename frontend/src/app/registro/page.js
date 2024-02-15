@@ -1,11 +1,11 @@
 'use client'
-import Link from "next/link";
-import { authUser } from "@/queries/usuario";
-import { useState } from "react";
-import { useRouter } from "next/navigation";
-import { useDispatch } from "react-redux";
+import { registerUser } from "@/queries/usuario";
 import { userLogin } from "@/store/reducers/userReducer";
-export default function Home() {
+import { useDispatch } from "react-redux";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+export default function Registro() {
+
   const router = useRouter()
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -19,7 +19,7 @@ export default function Home() {
   }
   const handleClick = () => {
     try {
-      authUser(password).then((res) => {
+      registerUser({ correo: email }).then((res) => {
         dispatch(userLogin(res.data))
         router.push('/profile')
       })
@@ -32,9 +32,7 @@ export default function Home() {
       <h1>Bienvenid@ a GreenGo</h1>
       <input placeholder="E-mail" id="email" onChange={(e) => handleChange(e)}></input>
       <input placeholder="contraseña" id="password" onChange={(e) => handleChange(e)}></input>
-      <button onClick={() => handleClick()}>Iniciar sesion</button>
-      <p>No tienes cuenta?</p>
-      <Link href="/registro">Registrarse</Link>
+      <button onClick={() => handleClick()}>Registrarse</button>
     </main>
   );
 }
