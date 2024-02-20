@@ -11,6 +11,7 @@ export default function DashboardLayout({
         <li><Link href="/profile/my-offers">Mis Ofertas</Link></li>
         <li><Link href="/profile/offers">Buscar ofertas</Link></li>
         <li><Link href="/profile/my-requests">Postulaciones</Link></li>
+        <li><Link href="/profile">Postulaciones</Link></li>
       </nav>
 
       {children}
