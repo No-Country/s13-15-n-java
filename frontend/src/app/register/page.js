@@ -4,7 +4,7 @@ import { userLogin } from "@/store/reducers/userReducer";
 import { useDispatch } from "react-redux";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-export default function Registro() {
+export default function Register() {
 
   const router = useRouter()
   const [email, setEmail] = useState("")

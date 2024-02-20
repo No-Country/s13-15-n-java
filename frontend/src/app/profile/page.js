@@ -7,9 +7,9 @@ export default function Registro() {
   const user = useSelector(userInfo)
   const router = useRouter()
   useEffect(() => {
-    if (!user.email) {
+    /*if (!user.email) {
       router.push("/")
-    }
+    }*/
   })
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
