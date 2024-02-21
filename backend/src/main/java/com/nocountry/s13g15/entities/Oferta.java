@@ -55,6 +55,7 @@ public class Oferta {
 
     private Double precio;
 
+    //Verificar pues ID eta en el token --investigar
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "usuario_id", nullable = false)
