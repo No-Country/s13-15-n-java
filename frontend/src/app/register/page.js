@@ -9,7 +9,9 @@ export default function Register() {
   const router = useRouter()
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+
   const dispatch = useDispatch()
+  
   const handleChange = (e) => {
     if (e.target.id == "email") {
       setEmail(e.target.value);

@@ -6,10 +6,14 @@ import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";
 import { userLogin } from "@/store/reducers/userReducer";
 export default function Home() {
+  
   const router = useRouter()
+
+  const dispatch = useDispatch()
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  const dispatch = useDispatch()
+  
+
   const handleChange = (e) => {
     if (e.target.id == "email") {
       setEmail(e.target.value);
@@ -17,6 +21,7 @@ export default function Home() {
       setPassword(e.target.value);
     }
   }
+
   const handleClick = () => {
     try {
       authUser(password).then((res) => {
