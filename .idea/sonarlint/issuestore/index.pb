@@ -83,3 +83,7 @@ Nbackend/src/main/java/com/nocountry/s13g15/exception/NoDataFoundException.java
 Obackend/src/main/java/com/nocountry/s13g15/exception/RolNoExistenException.java,4\3\4390a647731a0a4f8cbef22e01f599c677b70f2c
 B
 backend/.gitignore,7\e\7e16691a9fc60084a157565ec422c8094d3df67c
+‚
+Rbackend/src/main/java/com/nocountry/s13g15/exceptionhandler/ControllerAdvisor.java,3\f\3fd50ce9923419fece1fc4fbbc1a3f26686009c8
+|
+Lbackend/src/main/java/com/nocountry/s13g15/exception/DataFinalException.java,9\0\90f50ea587dc90f389855ff141e5a04532823ccc
