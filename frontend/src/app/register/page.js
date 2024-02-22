@@ -4,6 +4,8 @@ import { userLogin } from "@/store/reducers/userReducer";
 import { useDispatch } from "react-redux";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import * as styles from "./styles.module.css"
+
 export default function Register() {
 
   const router = useRouter()
@@ -13,9 +15,10 @@ export default function Register() {
     email: '',
     password: '',
     country: 'Argentina',
+    rol: '',
   });
   const [errors, setErrors] = useState({});
-
+  const [showForm, setShowForm] = useState(false)
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -54,71 +57,95 @@ export default function Register() {
       // Aquí podrías enviar los datos a tu servidor o hacer otra acción
     }
   };
+
+  const handleClick = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value,
+    });
+    setShowForm(!showForm)
+  }
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <header>
-        <h1>Ingresa tus datos</h1>
-        <h2>Completa la información requerida</h2>
-      </header>
-      <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-x-8">
-        <div className="flex flex-col w-full md:w-1/2">
-          <label htmlFor="name">Nombre</label>
-          <input
-            id="name"
-            value={formData.name}
-            onChange={handleChange}
-            className={`form-input ${errors.name && 'border-red-500'}`}
-          />
-          {errors.name && <p className="text-red-500">{errors.name}</p>}
+    <main className={styles.wrap}>
+      <section className={`${styles.step} ${showForm ? '' : styles.active}`}>
+        <h4 className="-m-3">Soy</h4>
+        <button id="rol" value="jardinero" onClick={handleClick} className={styles.buttonRol}>JARDINERO</button>
+        <button id="rol" value="propietario" onClick={handleClick} className={styles.buttonRol}>PROPIETARIO</button>
+      </section>
 
-          <label htmlFor="last-name">Apellido</label>
-          <input
-            id="last-name"
-            value={formData.lastName}
-            onChange={handleChange}
-            className={`form-input ${errors.lastName && 'border-red-500'}`}
-          />
-          {errors.lastName && <p className="text-red-500">{errors.lastName}</p>}
-        </div>
-        <div className="flex flex-col w-full md:w-1/2">
-          <label htmlFor="email">E-mail</label>
-          <input
-            id="email"
-            value={formData.email}
-            onChange={handleChange}
-            className={`form-input ${errors.email && 'border-red-500'}`}
-          />
-          {errors.email && <p className="text-red-500">{errors.email}</p>}
-
-          <label htmlFor="password">Contraseña</label>
-          <input
-            id="password"
-            type="password"
-            value={formData.password}
-            onChange={handleChange}
-            className={`form-input ${errors.password && 'border-red-500'}`}
-          />
-          {errors.password && <p className="text-red-500">{errors.password}</p>}
-
-          <label htmlFor="country">País</label>
-          <select
-            id="country"
-            value={formData.country}
-            onChange={handleChange}
-            className="form-select"
-          >
-            <option value="Argentina">Argentina</option>
-            <option value="Bolivia">Bolivia</option>
-            <option value="Chile">Chile</option>
-            <option value="Colombia">Colombia</option>
-            <option value="Perú">Perú</option>
-            <option value="Venezuela">Venezuela</option>
-          </select>
-        </div>
-        <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded self-center mt-4 md:mt-0">
-          Registrarse
-        </button>
-      </form>
+      <section className={`${styles.step} ${showForm ? styles.active : ''}`}>
+        <form onSubmit={handleSubmit} className={styles.form}>
+          <header className={styles.headerForm}>
+            <h4>Ingresa tus datos</h4>
+            <p>Completa la información requerida</p>
+          </header>
+          <div className={styles.inputsContainer}>
+            <div className={styles.inputContainer}>
+              <label htmlFor="name">Nombre</label>
+              <input
+                id="name"
+                value={formData.name}
+                onChange={handleChange}
+                className={styles.input}
+              />
+              {errors.name && <p className="text-red-500 relative bottom-0">{errors.name}</p>}
+            </div>
+            <div className={`${styles.inputContainer} relative`}>
+              <label htmlFor="last-name">Apellido</label>
+              <input
+                id="last-name"
+                value={formData.lastName}
+                onChange={handleChange}
+                className={styles.input}
+              />
+              {errors.lastName && <p className="text-red-500 absolute bottom-0">{errors.lastName}</p>}
+            </div>
+          </div>
+          <div className={styles.inputsContainer}>
+            <div className={styles.inputContainer}>
+              <label htmlFor="email">E-mail</label>
+              <input
+                id="email"
+                value={formData.email}
+                onChange={handleChange}
+                className={`${styles.input} ${errors.email && 'border-red-500'}`}
+              />
+              {errors.email && <p className="text-red-500">{errors.email}</p>}
+            </div>
+            <div className={styles.inputContainer}>
+              <label htmlFor="password">Contraseña</label>
+              <input
+                id="password"
+                type="password"
+                value={formData.password}
+                onChange={handleChange}
+                className={`${styles.input} ${errors.password && 'border-red-500'}`}
+              />
+              {errors.password && <p className="text-red-500">{errors.password}</p>}
+            </div>
+            <div className={styles.inputContainer}>
+              <label htmlFor="country">País</label>
+              <select
+                id="country"
+                value={formData.country}
+                onChange={handleChange}
+                className={styles.input}
+              >
+                <option value="Argentina">Argentina</option>
+                <option value="Bolivia">Bolivia</option>
+                <option value="Chile">Chile</option>
+                <option value="Colombia">Colombia</option>
+                <option value="Perú">Perú</option>
+                <option value="Venezuela">Venezuela</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" className={styles.buttonForm} >
+            Registrarse
+          </button>
+        </form>
+      </section>
     </main>
   );
 }
