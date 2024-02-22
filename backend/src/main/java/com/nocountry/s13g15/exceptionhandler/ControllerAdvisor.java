@@ -36,9 +36,13 @@ public class ControllerAdvisor {
         String messageError = "";
         String messageException = "";
         switch (exception.getClass().toString()) {
-            case "class com.nocountry.c15g39n.exception.UsuarioAprendizNoAutenticadoException":
+            case "class com.nocountry.s13g15.exception.UsuarioNoAutenticadoException":
                 messageError = "mensaje";
-                messageException = "El usuario aprendiz no esta autenticado.";
+                messageException = "El usuario no esta autenticado.";
+                break;
+            case "class com.nocountry.s13g15.exception.DataFinalException":
+                messageError = "mensaje";
+                messageException = "La fecha final no puede ser anterior a la fecha de inicio.";
                 break;
             default:
                 return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)

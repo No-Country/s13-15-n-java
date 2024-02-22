@@ -9,6 +9,7 @@ import * as styles from "./styles.module.css"
 export default function Register() {
 
   const router = useRouter()
+
   const [formData, setFormData] = useState({
     name: '',
     lastName: '',
@@ -19,6 +20,7 @@ export default function Register() {
   });
   const [errors, setErrors] = useState({});
   const [showForm, setShowForm] = useState(false)
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
