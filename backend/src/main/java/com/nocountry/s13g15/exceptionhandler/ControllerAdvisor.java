@@ -44,6 +44,14 @@ public class ControllerAdvisor {
                 messageError = "mensaje";
                 messageException = "La fecha final no puede ser anterior a la fecha de inicio.";
                 break;
+            case "class com.nocountry.s13g15.exception.OfertaNoExistenException":
+                messageError = "mensaje";
+                messageException = "La oferta no se encuentra registrada";
+                break;
+            case "class com.nocountry.s13g15.exception.SolicitudYaRegistradaException":
+                messageError = "mensaje";
+                messageException = "Esta solicitud ya esta registrada";
+                break;
             default:
                 return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                         .body(Collections.singletonMap(exception.getClass().toString(), exception.getMessage()));
