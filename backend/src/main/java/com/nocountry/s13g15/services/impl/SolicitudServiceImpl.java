@@ -14,6 +14,7 @@ import com.nocountry.s13g15.repositories.OfertaRepository;
 import com.nocountry.s13g15.repositories.SolicitudRepository;
 import com.nocountry.s13g15.repositories.UsuarioRepository;
 import com.nocountry.s13g15.services.ISolicitudService;
+import com.nocountry.s13g15.services.IToken;
 import com.nocountry.s13g15.utils.MethodsUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,7 +47,7 @@ public class SolicitudServiceImpl implements ISolicitudService {
     private final SolicitudRequestToSolicitud solicitudRequestToSolicitud;
 
     @Autowired
-    private final TokenAdapter token;
+    private final IToken token;
 
     @Override
     public SolicitudResponseDto registrarSolicitud(SolicitudRequestDto solicitudRequestDto) {
