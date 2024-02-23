@@ -56,6 +56,22 @@ public class ControllerAdvisor {
                 messageError = "mensaje";
                 messageException = "El jardinero no existe.";
                 break;
+            case "class com.nocountry.s13g15.exception.OfertaNoEsMismaCiudadJardineroException":
+                messageError = "mensaje";
+                messageException = "La oferta publicada no tiene la misma ciudad del jardinero.";
+                break;
+            case "class com.nocountry.s13g15.exception.OfertaInactivaException":
+                messageError = "mensaje";
+                messageException = "La oferta se encuentra inactiva.";
+                break;
+            case "class com.nocountry.s13g15.exception.FechaException":
+                messageError = "mensaje";
+                messageException = "La fecha de inicio de la oferta ya paso.";
+                break;
+            case "class com.nocountry.s13g15.exception.InformacionPerfilNoRegistradaException":
+                messageError = "mensaje";
+                messageException = "El usuario no ha registrado la información del perfil.";
+                break;
             default:
                 return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                         .body(Collections.singletonMap(exception.getClass().toString(), exception.getMessage()));

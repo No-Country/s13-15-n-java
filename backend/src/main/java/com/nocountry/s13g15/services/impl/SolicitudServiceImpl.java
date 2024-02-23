@@ -1,14 +1,16 @@
 package com.nocountry.s13g15.services.impl;
 
-import com.nocountry.s13g15.dto.request.SolicitudRequestDto;
 import com.nocountry.s13g15.dto.response.SolicitudResponseDto;
 import com.nocountry.s13g15.entities.Oferta;
 import com.nocountry.s13g15.entities.Solicitud;
 import com.nocountry.s13g15.entities.Usuario;
+import com.nocountry.s13g15.exception.FechaException;
+import com.nocountry.s13g15.exception.InformacionPerfilNoRegistradaException;
+import com.nocountry.s13g15.exception.OfertaInactivaException;
+import com.nocountry.s13g15.exception.OfertaNoEsMismaCiudadJardineroException;
 import com.nocountry.s13g15.exception.OfertaNoExistenException;
 import com.nocountry.s13g15.exception.SolicitudYaRegistradaException;
 import com.nocountry.s13g15.exception.UsuarioNoExistenException;
-import com.nocountry.s13g15.mapper.SolicitudRequestToSolicitud;
 import com.nocountry.s13g15.mapper.SolicitudToResponseDto;
 import com.nocountry.s13g15.repositories.OfertaRepository;
 import com.nocountry.s13g15.repositories.SolicitudRepository;
@@ -17,13 +19,13 @@ import com.nocountry.s13g15.services.ISolicitudService;
 import com.nocountry.s13g15.services.IToken;
 import com.nocountry.s13g15.utils.MethodsUtil;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Date;
+import java.util.Objects;
 import java.util.Optional;
 
 @Service
@@ -31,30 +33,18 @@ import java.util.Optional;
 @Transactional
 public class SolicitudServiceImpl implements ISolicitudService {
 
-    @Autowired
     private final UsuarioRepository usuarioRepository;
-
-    @Autowired
     private final SolicitudRepository solicitudRepository;
-
-    @Autowired
     private final OfertaRepository ofertaRepository;
-
-    @Autowired
     private final SolicitudToResponseDto solicitudToResponseDto;
-
-    @Autowired
-    private final SolicitudRequestToSolicitud solicitudRequestToSolicitud;
-
-    @Autowired
     private final IToken token;
 
     @Override
-    public SolicitudResponseDto registrarSolicitud(SolicitudRequestDto solicitudRequestDto) {
+    public SolicitudResponseDto registrarSolicitud(Long ofertaId) {
 
         Optional<Usuario> usuarioOptional = usuarioRepository.findById(MethodsUtil.getIdUsuarioByToken(token));
-        Optional<Oferta> ofertaOptional = ofertaRepository.findById(solicitudRequestDto.getIdOferta());
-        Boolean existsSolicitud = solicitudRepository.existsByOfertaIdAndUsuarioId(solicitudRequestDto.getIdOferta(), MethodsUtil.getIdUsuarioByToken(token));
+        Optional<Oferta> ofertaOptional = ofertaRepository.findById(ofertaId);
+        Boolean existsSolicitud = solicitudRepository.existsByOfertaIdAndUsuarioId(ofertaId, MethodsUtil.getIdUsuarioByToken(token));
 
         if(usuarioOptional.isEmpty()){
             throw new UsuarioNoExistenException();
@@ -68,8 +58,17 @@ public class SolicitudServiceImpl implements ISolicitudService {
             throw new SolicitudYaRegistradaException();
         }
 
-        Solicitud solicitud = solicitudRequestToSolicitud.toSolicitud(solicitudRequestDto);
-        solicitud.setFechaSolicitud(Date.from(LocalDateTime.now().atZone(ZoneId.systemDefault()).toInstant()));
+        if(usuarioOptional.get().getPerfil()==null) throw new InformacionPerfilNoRegistradaException();
+
+            Date fechaActual = Date.from(LocalDateTime.now().atZone(ZoneId.systemDefault()).toInstant());
+        if(ofertaOptional.get().getStatusOfertaActiva().equals(false)) throw new OfertaInactivaException();
+        if(fechaActual.after(ofertaOptional.get().getFechaInicio())) throw new FechaException();
+        if(!Objects.equals(ofertaOptional.get().getUsuario().getCiudad().getId(), usuarioOptional.get().getCiudad().getId())) throw new OfertaNoEsMismaCiudadJardineroException();
+
+
+
+        Solicitud solicitud = new Solicitud();
+        solicitud.setFechaSolicitud(fechaActual);
         solicitud.setStatusSolicitudActiva(true);
         solicitud.setUsuario(usuarioOptional.get());
         solicitud.setOferta(ofertaOptional.get());
