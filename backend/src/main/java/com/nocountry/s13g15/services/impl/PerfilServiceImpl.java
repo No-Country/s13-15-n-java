@@ -44,15 +44,30 @@ public class PerfilServiceImpl implements IPerfilService {
         return mapearDatos(usuario, perfil, ciudad);
     }
 
+    @Override
+    public PerfilResponseDto verPerfil() {
+        Long idUsuario = MethodsUtil.getIdUsuarioByToken(token);
+        Usuario usuario = usuarioRepository.findById(idUsuario).orElse(null);
+        if(usuario==null) throw new UsuarioNoExistenException();
+        Ciudad ciudad = ciudadRepository.findById(usuario.getCiudad().getId()).orElseThrow();
+
+        if(usuario.getPerfil()==null) {
+           return  mapearDatos(usuario, null, ciudad);
+        }
+        return mapearDatos(usuario, usuario.getPerfil(), ciudad);
+    }
+
     private PerfilResponseDto mapearDatos(Usuario usuario, Perfil perfil, Ciudad ciudad){
         PerfilResponseDto perfilResponseDto = new PerfilResponseDto();
         perfilResponseDto.setNombre(usuario.getNombre());
         perfilResponseDto.setApellido(usuario.getApellido());
         perfilResponseDto.setCorreo(usuario.getCorreo());
         perfilResponseDto.setCiudad(ciudad);
-        perfilResponseDto.setDescripcion(perfil.getDescripcion());
-        perfilResponseDto.setExperiencia(perfil.getExperiencia());
-        perfilResponseDto.setConocimientos(perfil.getConocimientos());
+        if(perfil!=null) {
+            perfilResponseDto.setDescripcion(perfil.getDescripcion());
+            perfilResponseDto.setExperiencia(perfil.getExperiencia());
+            perfilResponseDto.setConocimientos(perfil.getConocimientos());
+        }
         return  perfilResponseDto;
     }
 }

@@ -7,4 +7,6 @@ public interface IPerfilService {
 
     PerfilResponseDto crearPerfil(PerfilRequestDto perfilRequestDto);
 
+    PerfilResponseDto verPerfil();
+
 }
