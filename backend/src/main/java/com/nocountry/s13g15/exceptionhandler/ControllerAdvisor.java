@@ -72,6 +72,10 @@ public class ControllerAdvisor {
                 messageError = "mensaje";
                 messageException = "El usuario no ha registrado la información del perfil.";
                 break;
+            case "class com.nocountry.s13g15.exception.UsuarioNoExistenException":
+                messageError = "mensaje";
+                messageException = "El usuario no existe.";
+                break;
             default:
                 return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                         .body(Collections.singletonMap(exception.getClass().toString(), exception.getMessage()));
