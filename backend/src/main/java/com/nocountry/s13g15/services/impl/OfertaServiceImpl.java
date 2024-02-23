@@ -5,15 +5,23 @@ import com.nocountry.s13g15.dto.response.OfertaResponseDto;
 import com.nocountry.s13g15.entities.Oferta;
 import com.nocountry.s13g15.entities.Usuario;
 import com.nocountry.s13g15.exception.DataFinalException;
+import com.nocountry.s13g15.exception.JardineroNoExisteException;
 import com.nocountry.s13g15.exception.UsuarioNoExistenException;
 import com.nocountry.s13g15.mapper.OfertaRequestToOferta;
 import com.nocountry.s13g15.repositories.OfertaRepository;
 import com.nocountry.s13g15.repositories.UsuarioRepository;
 import com.nocountry.s13g15.services.IOfertaService;
+import com.nocountry.s13g15.services.IToken;
+import com.nocountry.s13g15.utils.MethodsUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 
@@ -26,7 +34,7 @@ public class OfertaServiceImpl implements IOfertaService {
     private final com.nocountry.s13g15.mapper.OfertaToResponseDto OfertaToResponseDto;
     private final OfertaRepository ofertaRepository;
     private final UsuarioRepository usuarioRepository;
-    private final TokenAdapter token;
+    private final IToken token;
 
     @Override
     public OfertaResponseDto publicarOferta(OfertaRequestDto ofertaRequestDto) {
@@ -49,6 +57,18 @@ public class OfertaServiceImpl implements IOfertaService {
         return ofertaResponseDto;
 
 
+    }
+
+    @Override
+    public List<Oferta> obtenerOfertas() {
+        Long jardineroId = MethodsUtil.getIdUsuarioByToken(token);
+        if(usuarioRepository.findById(jardineroId).orElse(null)==null) throw new JardineroNoExisteException();
+
+        Date fechaActual = Date.from(LocalDateTime.now().atZone(ZoneId.systemDefault()).toInstant());
+        List<Oferta> ofertas =ofertaRepository.obtenerOfertasPorCiudadYFechaActualAnteriorAInicio(1L, fechaActual).orElseThrow();
+
+
+        return ofertas;
     }
 
 

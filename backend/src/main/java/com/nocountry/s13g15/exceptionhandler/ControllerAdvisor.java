@@ -52,6 +52,10 @@ public class ControllerAdvisor {
                 messageError = "mensaje";
                 messageException = "Esta solicitud ya esta registrada";
                 break;
+            case "class com.nocountry.s13g15.exception.JardineroNoExisteException":
+                messageError = "mensaje";
+                messageException = "El jardinero no existe.";
+                break;
             default:
                 return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                         .body(Collections.singletonMap(exception.getClass().toString(), exception.getMessage()));
