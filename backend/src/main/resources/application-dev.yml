@@ -1,4 +1,6 @@
 spring:
+  jackson:
+    time-zone: America/Bogota
   datasource:
     url: ${URL_DB}
     username: ${USERNAME_DB}

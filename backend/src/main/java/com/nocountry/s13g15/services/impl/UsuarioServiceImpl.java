@@ -2,11 +2,13 @@ package com.nocountry.s13g15.services.impl;
 
 import com.nocountry.s13g15.dto.request.UsuarioRequestDto;
 import com.nocountry.s13g15.dto.response.UsuarioResponseDto;
+import com.nocountry.s13g15.entities.Ciudad;
 import com.nocountry.s13g15.entities.Rol;
 import com.nocountry.s13g15.entities.Usuario;
 import com.nocountry.s13g15.exception.UsuarioNoExistenException;
 import com.nocountry.s13g15.mapper.UsuarioRequestToUsuario;
 import com.nocountry.s13g15.mapper.UsuarioToReponseDto;
+import com.nocountry.s13g15.repositories.CiudadRepository;
 import com.nocountry.s13g15.repositories.RolRepository;
 import com.nocountry.s13g15.repositories.UsuarioRepository;
 import com.nocountry.s13g15.services.IUsuarioService;
@@ -29,15 +31,22 @@ public class UsuarioServiceImpl implements IUsuarioService {
     private final UsuarioRequestToUsuario usuarioRequestToUsuario;
     private final UsuarioRepository usuarioRepository;
     private final RolRepository rolRepository;
+    private final CiudadRepository ciudadRepository;
     private final PasswordEncoder passwordEncoder;
     @Override
-    public UsuarioResponseDto registrarUsuario(UsuarioRequestDto usuarioRequestDto) {
+    public UsuarioResponseDto registrarUsuario(UsuarioRequestDto usuarioRequestDto, Long rolPropietario) {
         Usuario usuario = usuarioRequestToUsuario.toUsuario(usuarioRequestDto);
         usuario.setFechaRegistro(Date.from(LocalDateTime.now().atZone(ZoneId.systemDefault()).toInstant()));
         usuario.setClave(passwordEncoder.encode(usuarioRequestDto.getClave()));
 
-        Rol rolAprendiz = rolRepository.findById(1L).orElse(null);
+
+
+        Rol rolAprendiz = rolRepository.findById(rolPropietario).orElse(null);
         usuario.setRol(rolAprendiz);
+
+        Ciudad ciudad = ciudadRepository.findById(usuarioRequestDto.getCiudadId()).orElse(null);
+        usuario.setCiudad(ciudad);
+
         usuarioRepository.save(usuario);
 
 

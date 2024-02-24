@@ -42,6 +42,17 @@ public class Usuario {
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "fecha_registro")
     private Date fechaRegistro;
+
+    @ManyToOne
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JoinColumn(name = "perfil_id")
+    private Perfil perfil;
+
+    @ManyToOne
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JoinColumn(name = "ciudad_id", nullable = false)
+    private Ciudad ciudad;
+
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "rol_id", nullable = false)

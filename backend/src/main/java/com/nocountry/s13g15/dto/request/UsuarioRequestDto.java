@@ -4,7 +4,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.validation.constraints.Email;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Getter
@@ -23,6 +25,10 @@ public class UsuarioRequestDto {
     @NotBlank(message = "El correo electrónico es requerido")
     @Email(message = "El correo electrónico debe ser válido")
     private String correo;
+
+    @NotNull(message = "La ciudad es requerida")
+    @Min(value = 1)
+    private Long ciudadId;
 
     @NotBlank(message = "La clave es requerida")
     private String clave;
