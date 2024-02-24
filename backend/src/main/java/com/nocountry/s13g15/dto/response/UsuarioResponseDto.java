@@ -1,5 +1,7 @@
 package com.nocountry.s13g15.dto.response;
 
+import com.nocountry.s13g15.entities.Ciudad;
+import com.nocountry.s13g15.entities.Perfil;
 import com.nocountry.s13g15.entities.Rol;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,5 +17,7 @@ public class UsuarioResponseDto {
     private String correo;
     private String clave;
     private Date fechaRegistro;
+    private Perfil perfil;
+    private Ciudad ciudad;
     private Rol rol;
 }
