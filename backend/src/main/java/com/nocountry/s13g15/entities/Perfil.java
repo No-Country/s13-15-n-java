@@ -22,6 +22,6 @@ public class Perfil {
     @Id
     private Long id;
     private String descripcion;
-    private Long experiencia;
+    private Double experiencia;
     private String conocimientos;
 }

@@ -36,9 +36,45 @@ public class ControllerAdvisor {
         String messageError = "";
         String messageException = "";
         switch (exception.getClass().toString()) {
-            case "class com.nocountry.c15g39n.exception.UsuarioAprendizNoAutenticadoException":
+            case "class com.nocountry.s13g15.exception.UsuarioNoAutenticadoException":
                 messageError = "mensaje";
-                messageException = "El usuario aprendiz no esta autenticado.";
+                messageException = "El usuario no esta autenticado.";
+                break;
+            case "class com.nocountry.s13g15.exception.DataFinalException":
+                messageError = "mensaje";
+                messageException = "La fecha final no puede ser anterior a la fecha de inicio.";
+                break;
+            case "class com.nocountry.s13g15.exception.OfertaNoExistenException":
+                messageError = "mensaje";
+                messageException = "La oferta no se encuentra registrada";
+                break;
+            case "class com.nocountry.s13g15.exception.SolicitudYaRegistradaException":
+                messageError = "mensaje";
+                messageException = "Esta solicitud ya esta registrada";
+                break;
+            case "class com.nocountry.s13g15.exception.JardineroNoExisteException":
+                messageError = "mensaje";
+                messageException = "El jardinero no existe.";
+                break;
+            case "class com.nocountry.s13g15.exception.OfertaNoEsMismaCiudadJardineroException":
+                messageError = "mensaje";
+                messageException = "La oferta publicada no tiene la misma ciudad del jardinero.";
+                break;
+            case "class com.nocountry.s13g15.exception.OfertaInactivaException":
+                messageError = "mensaje";
+                messageException = "La oferta se encuentra inactiva.";
+                break;
+            case "class com.nocountry.s13g15.exception.FechaException":
+                messageError = "mensaje";
+                messageException = "La fecha de inicio de la oferta ya paso.";
+                break;
+            case "class com.nocountry.s13g15.exception.InformacionPerfilNoRegistradaException":
+                messageError = "mensaje";
+                messageException = "El usuario no ha registrado la información del perfil.";
+                break;
+            case "class com.nocountry.s13g15.exception.UsuarioNoExistenException":
+                messageError = "mensaje";
+                messageException = "El usuario no existe.";
                 break;
             default:
                 return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)

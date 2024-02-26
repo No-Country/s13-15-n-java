@@ -1,0 +1,16 @@
+
+.inputForm {
+    @apply rounded-tl rounded-bl p-2 outline-none text-black
+}
+
+.paragraph{
+    @apply text-xs
+}
+
+.boxIconInput{
+   @apply bg-white rounded-tr rounded-br  flex pr-1
+}
+
+.fieldset{
+    @apply flex 
+}

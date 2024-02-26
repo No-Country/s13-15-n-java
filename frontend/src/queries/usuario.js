@@ -1,6 +1,10 @@
 import { openGetQuery, openPostQuery } from "./config";
 
 
+const getUser = (id) => {
+  return openGetQuery("usuario/" + id);
+}
+
 const authUser = (id) => {
   return openGetQuery("usuario/" + id);
 };
@@ -10,5 +14,6 @@ const registerUser = (body) => {
 
 export {
   authUser,
-  registerUser
+  registerUser,
+  getUser
 };
