@@ -2,8 +2,8 @@
 const Hero = () => {
   return (
     <div className="relative">
-      {/* Navbar */}
       
+      {/* Navbar */}
       <nav className="absolute top-0 left-0 right-0 flex items-center justify-between px-6 py-4 bg-transparent border-b border-gray-200 h-[104px]">
         <div className="flex items-center lg:ml-16">
           <h1 className="text-white font-montserrat" style={{fontSize: "38px"}}>GardenerGo</h1>
