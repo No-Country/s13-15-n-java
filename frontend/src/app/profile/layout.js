@@ -1,22 +1,23 @@
 import Link from "next/link"
-import { BsSearch } from "react-icons/bs";
-
+import Image from "next/image"
 export default function DashboardLayout({
   children, // will be a page or nested layout
 }) {
   return (
-    <section className="flex " >
-      {/* Include shared UI here e.g. a header or sidebar */}
-      <nav className="w-1/5 bg-black text-white h-screen lg:inline xl:inline md:hidden xs:hidden list-none ">
-        <ul className="flex  flex-col ml-8 justify-around h-1/2">
-        <li><Link className="text-xl" href="/profile/post-offer">+ PUBLICAR OFERTA</Link></li>
-        <li><Link className="text-xl flex" href="/profile/my-offers"><BsSearch className="mr-2"/>VER OFERTAS</Link></li>
-        <li><Link className="text-xl" href="/profile/offers">MI PERFIL</Link></li>
-        </ul>
-        <div className="h-1/2 ml-8 text-xl">SALIR</div>
+    <main className="flex">
+      <nav className="flex flex-col justify-between w-1/5 bg-black p-10 text-white h-screen list-none">
+        <div className="flex flex-col gap-10">
+          <Image src="/logo.svg" width={274} height={38} className="mx-auto"></Image>
+          <ul className="flex flex-col gap-8">
+          <li className="flex gap-2"><Image src="/offerIcon.svg" width={36} height={36}></Image><Link className="text-xl" href="/profile/post-offer">PUBLICAR OFERTA</Link></li>
+          <li className="flex gap-2"><Image src="/leafIcon.svg" width={36} height={36}></Image><Link className="text-xl" href="/profile/my-offers">VER POSTULANTES</Link></li>
+          <li className="flex gap-2"><Image src="/userIcon.svg" width={36} height={36}></Image><Link className="text-xl" href="/profile/offers">MI PERFIL</Link></li>
+          </ul>
+        </div>
+        <div className="flex gap-2"><Image src="/exitIcon.svg" width={50} height={50}></Image><Link className="text-xl my-auto" href="/">SALIR</Link></div>
       </nav>
 
       {children}
-    </section>
+    </main>
   )
 }
