@@ -76,6 +76,14 @@ public class ControllerAdvisor {
                 messageError = "mensaje";
                 messageException = "El usuario no existe.";
                 break;
+            case "class com.nocountry.s13g15.exception.HistorialTrabajoNoExistenException":
+                messageError = "mensaje";
+                messageException = "El historial de trabajo no existe.";
+                break;
+            case "class com.nocountry.s13g15.exception.HistorialTrabajoEstaPendienteException":
+                messageError = "mensaje";
+                messageException = "El historial de trabajo esta con estado 'pendiente'";
+                break;
             default:
                 return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                         .body(Collections.singletonMap(exception.getClass().toString(), exception.getMessage()));
