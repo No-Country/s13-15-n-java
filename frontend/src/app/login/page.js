@@ -12,13 +12,14 @@ export default function Login() {
 
   return (
     <main className="flex min-h-screen overflow-hidden bg-[url('/imgLogin.png')] bg-no-repeat bg-cover ">
-      <section className="flex items-center m-auto justify-between w-[80%] ">
-        <div>
-          <h2 className="text-6xl font-medium">Bienvenido@ a </h2>
-          <p className="text-3xl">Encontra tu jardinero</p>
+      <section className=" borde flex flex-col h-[50vh]  m-auto justify-between w-[80%] ">
+        <div className="">
+          <h2 className="hidden font-medium text-white">Bienvenido@ a </h2>
+          <img src="/logo.svg" alt="img" className="m-auto" />
+          <p className=" hidden text-2xl text-white">Encontra tu jardinero</p>
         </div>
 
-        <div>
+        <div className="self-center">
           <form
             onSubmit={handleData}
             className="flex flex-col gap-4 text-center "
