@@ -1,4 +1,4 @@
-
+import Link from "next/link";
 const Hero = () => {
   return (
     <div className="relative">
@@ -15,7 +15,7 @@ const Hero = () => {
           <button className="text-white text-lg bg-transparent mx-2 hover:bg-white hover:text-black px-6 py-2 rounded-md transition duration-300 ease-in-out">Blog</button>
         </div>
         <div className="flex items-center space-x-12 lg:mr-16">
-          <button className="bg-white text-[#073A38] hover:bg-[#53BC65] hover:text-white px-6 py-3 rounded-md transition duration-300 ease-in-out">Iniciar Sesión</button>
+          <Link href="/login"><button className="bg-white text-[#073A38] hover:bg-[#53BC65] hover:text-white px-6 py-3 rounded-md transition duration-300 ease-in-out">Iniciar Sesión</button></Link>
           <button className="bg-white text-[#073A38] hover:bg-[#53BC65] hover:text-white px-6 py-3 rounded-md transition duration-300 ease-in-out">Registrarse</button>
         </div>
       </nav>
