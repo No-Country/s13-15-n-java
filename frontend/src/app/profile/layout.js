@@ -10,7 +10,7 @@ export default function DashboardLayout({ children}) {
   useEffect(() => {
     setInitialUser(JSON.parse(localStorage.getItem('user')))
   }, []);
-  if(initialUser?.correo === "jardinero@gmail.com"){
+  if(initialUser?.correo !== "jardinero@gmail.com"){
     return (
       <main className="flex">
         <nav className="flex flex-col justify-between w-1/5 bg-black p-10 text-white h-screen list-none">
