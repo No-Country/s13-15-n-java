@@ -2,13 +2,20 @@
 import "./page.css";
 import Link from "next/link";
 import { useState } from "react";
-
+import { loginUser } from "@/queries/usuario";
+import { useRouter } from "next/navigation";
 export default function Login() {
-  
+  const router = useRouter()
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleData = () => {};
+  const handleData = (e) => {
+    e.preventDefault()
+    loginUser({email: email, password: password}).then(res => {
+      
+      router.push("/profile");
+    })
+  };
 
   return (
     <main className="flex min-h-screen overflow-hidden bg-[url('/imgLogin.png')] bg-no-repeat bg-cover ">
@@ -50,7 +57,7 @@ export default function Login() {
             </fieldset>
 
             <p className="paragraph">Olvidaste la contraseña ?</p>
-            <button className="bg-[#53BC65] text-black rounded p-2">
+            <button type="submit" className="bg-[#53BC65] text-black rounded p-2">
               Iniciar Sesión
             </button>
             <p className="paragraph">No tienes cuenta ?</p>

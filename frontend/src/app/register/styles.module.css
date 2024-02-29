@@ -84,6 +84,8 @@
   width: 350px;
   height: 60px;
   border-radius: 10px;
+  background-color: var(--white);
+  color: var(--black);
 }
 
 .buttonForm {
