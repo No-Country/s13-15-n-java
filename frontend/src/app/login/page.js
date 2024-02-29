@@ -1,20 +1,25 @@
 "use client";
 import "./page.css";
 import Link from "next/link";
-import { useState } from "react";
 import { loginUser } from "@/queries/usuario";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
+import {  useDispatch } from 'react-redux';
+
 export default function Login() {
   const router = useRouter()
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const dispatch = useDispatch();
+
+
   const handleData = (e) => {
     e.preventDefault()
-    loginUser({email: email, password: password}).then(res => {
-      
-      router.push("/profile");
-    })
+    //loginUser()
+    localStorage.setItem('user', JSON.stringify({correo: email}));
+    console.log(JSON.parse(localStorage.getItem('user')));
+    router.push("/profile");
   };
 
   return (

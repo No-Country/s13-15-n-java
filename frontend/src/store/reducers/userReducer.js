@@ -10,17 +10,14 @@ export const userReducer = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    userLogin: (state, data) => {
-
-      state.nombre = data.payload.nombre;
-      state.apellido = data.payload.apellido;
-      state.ciudad = data.payload.ciudad;
-      state.correo = data.payload.correo;
+    setUser: (state, action) => {
+      return action.payload;
     },
   },
 })
 
-export const { userLogin } = userReducer.actions
+export const { setUser } = userReducer.actions
+export const selectUser = (state) => state.user;
 export const userInfo = (state) => state.user;
 
 export default userReducer.reducer
