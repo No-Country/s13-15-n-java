@@ -7,9 +7,10 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
   --green: #53BC65;
-  --white: #fff;
+  --white: #EDFBF2;
   --green-dark: #073A38;
   --black: #373737;
+  --green-light: #BBF7D1;
 }
 
 @media (prefers-color-scheme: dark) {
