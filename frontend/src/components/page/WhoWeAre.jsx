@@ -1,6 +1,6 @@
 const WhoWeAre = () => {
   return (
-    <div className="flex flex-col px-20 py-12 max-md:px-5">
+    <div className="flex flex-col px-20 py-12 max-md:px-5 bg-[#edfbf2]">
       <div className="mx-2.5 mt-8 text-7xl font-semibold leading-[70px] max-md:max-w-full max-md:text-4xl max-md:leading-10">
       <span className="text-[#53BC65]">Miles de jardineros{" "}</span>
         <span className="text-cyan-950">
