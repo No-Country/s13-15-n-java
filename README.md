@@ -1,19 +1,18 @@
-# GardenerGo
 ![gardenerGo](https://github.com/No-Country/s13-15-n-java/assets/136188411/49a855a0-5194-4142-b420-41380983307d)
 ![text1-5-9](https://github.com/No-Country/s13-15-n-java/assets/136188411/2017cb64-f574-4ab7-98a2-bad9cd43e26b)
 
 
-## Seleccionado 13 - Equipo 15 - Turno noche - Java
+### Seleccionado 13 - Equipo 15 - Turno noche - Java
 
-####![Users_Group](https://github.com/No-Country/s13-15-n-java/assets/136188411/45d65464-a63f-4527-9229-4bc5237d1719) ¿Quiénes Somos?
+## ![Users_Group](https://github.com/No-Country/s13-15-n-java/assets/136188411/45d65464-a63f-4527-9229-4bc5237d1719) ¿Quiénes Somos?
 
 En GardeneGo los profesionales brindan todo tipo de servicios de jardinería, paisajismo, poda de árboles y mantenimiento de exteriores en todos los aspectos en todas las ciudades del mundo, en constante expansión a nuevos territorios.
 
-####![Leaf](https://github.com/No-Country/s13-15-n-java/assets/136188411/a581f806-877c-4c27-9d1c-4f3c3297a22e) ¿Qué hacemos?
+## ![Leaf](https://github.com/No-Country/s13-15-n-java/assets/136188411/a581f806-877c-4c27-9d1c-4f3c3297a22e) ¿Qué hacemos?
 
 Más de 15 servicios de jardinería, paisajismo, cuidado de árboles y mantenimiento de exteriores de profesionales, utilizando la más alta tecnología e innovación. Por ello, los profesionales con los que cuenta el sitio web siguen los estándares de calidad, lo que garantiza a los clientes un servicio sin complicaciones y con grandes resultados.
 
-#### ![Check_Big](https://github.com/No-Country/s13-15-n-java/assets/136188411/7999c45f-4966-41f0-976a-603fdd6d9676) Nuestra misión
+## ![Check_Big](https://github.com/No-Country/s13-15-n-java/assets/136188411/7999c45f-4966-41f0-976a-603fdd6d9676) Nuestra misión
 
 Como proveedor de servicios líder de jardinería, tenemos como objetivo mejorar la experiencia de los clientes. Llevamos ese esfuerzo al siguiente nivel y lo hemos convertido en nuestra filosofía de felicidad de 360 grados. Eso significa que siempre nos esforzamos por facilitar la vida de los clientes, creando un servicio sin complicaciones para todas las partes involucradas.
 
