@@ -1,21 +1,25 @@
 # GardenerGo
+![gardenerGo](https://github.com/No-Country/s13-15-n-java/assets/136188411/49a855a0-5194-4142-b420-41380983307d)
+![text1-5-9](https://github.com/No-Country/s13-15-n-java/assets/136188411/2017cb64-f574-4ab7-98a2-bad9cd43e26b)
+
+
 ## Seleccionado 13 - Equipo 15 - Turno noche - Java
 
-#### ¿Quiénes Somos?
+####![Users_Group](https://github.com/No-Country/s13-15-n-java/assets/136188411/45d65464-a63f-4527-9229-4bc5237d1719) ¿Quiénes Somos?
 
 En GardeneGo los profesionales brindan todo tipo de servicios de jardinería, paisajismo, poda de árboles y mantenimiento de exteriores en todos los aspectos en todas las ciudades del mundo, en constante expansión a nuevos territorios.
 
-#### ¿Qué hacemos?
+####![Leaf](https://github.com/No-Country/s13-15-n-java/assets/136188411/a581f806-877c-4c27-9d1c-4f3c3297a22e) ¿Qué hacemos?
 
 Más de 15 servicios de jardinería, paisajismo, cuidado de árboles y mantenimiento de exteriores de profesionales, utilizando la más alta tecnología e innovación. Por ello, los profesionales con los que cuenta el sitio web siguen los estándares de calidad, lo que garantiza a los clientes un servicio sin complicaciones y con grandes resultados.
 
-#### Nuestra misión
+#### ![Check_Big](https://github.com/No-Country/s13-15-n-java/assets/136188411/7999c45f-4966-41f0-976a-603fdd6d9676) Nuestra misión
 
 Como proveedor de servicios líder de jardinería, tenemos como objetivo mejorar la experiencia de los clientes. Llevamos ese esfuerzo al siguiente nivel y lo hemos convertido en nuestra filosofía de felicidad de 360 grados. Eso significa que siempre nos esforzamos por facilitar la vida de los clientes, creando un servicio sin complicaciones para todas las partes involucradas.
 
 ---------------------------------------------------
 
-## TECNOLOGÍAS UTILIZADAS
+## 👨🏽‍💻👩🏽‍💻 TECNOLOGÍAS UTILIZADAS
 
 #### FRONT END
 
@@ -24,11 +28,16 @@ Como proveedor de servicios líder de jardinería, tenemos como objetivo mejorar
 [![JavaScript](https://camo.githubusercontent.com/6eee5f6e83f1fdb987a4a5707fb989fc10646367244e505ee289b93909c78932/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f2d4a6176615363726970742d626c61636b3f7374796c653d666c61742d737175617265266c6f676f3d6a617661736372697074)](https://camo.githubusercontent.com/6eee5f6e83f1fdb987a4a5707fb989fc10646367244e505ee289b93909c78932/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f2d4a6176615363726970742d626c61636b3f7374796c653d666c61742d737175617265266c6f676f3d6a617661736372697074)
 
 #### BACK END
-A completar
+
+[![PostgreSQL](https://camo.githubusercontent.com/6644e550d6079f8b8ec281d92529a2293c2e34bf65798d5876123b9a60bc5280/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f2d506f737467726553514c2d3333363739313f7374796c653d666c61742d737175617265266c6f676f3d706f737467726573716c)](https://camo.githubusercontent.com/6644e550d6079f8b8ec281d92529a2293c2e34bf65798d5876123b9a60bc5280/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f2d506f737467726553514c2d3333363739313f7374796c653d666c61742d737175617265266c6f676f3d706f737467726573716c)
+[![Docker](https://camo.githubusercontent.com/ab439b8eb554cf958567e9f29520f7ce838fe73859143390bb550c6fc0c90217/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f2d446f636b65722d626c61636b3f7374796c653d666c61742d737175617265266c6f676f3d646f636b6572)](https://camo.githubusercontent.com/ab439b8eb554cf958567e9f29520f7ce838fe73859143390bb550c6fc0c90217/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f2d446f636b65722d626c61636b3f7374796c653d666c61742d737175617265266c6f676f3d646f636b6572)
+[![Java](https://camo.githubusercontent.com/46c53029512636b30e6ece9e24e78b70123a80c3a1c913270580e9dca9fa2262/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f2d6a6176612d4533344138363f7374796c653d666c61742d737175617265266c6f676f3d6a617661)](https://camo.githubusercontent.com/46c53029512636b30e6ece9e24e78b70123a80c3a1c913270580e9dca9fa2262/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f2d6a6176612d4533344138363f7374796c653d666c61742d737175617265266c6f676f3d6a617661)
+
+ Spring boot, Gradle, Postman, Dbeaver
 
 ##### TESTING
 
-[![Microsoft Azure](https://camo.githubusercontent.com/ad09ace6bd3367e993a2b9ffc3257a318df3fdd48c1f3c8ccdd4ca374974a521/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4d6963726f736f6674253230417a7572652d3233324637453f7374796c653d666c61742d737175617265266c6f676f3d6d6963726f736f66742d617a757265)](https://camo.githubusercontent.com/ad09ace6bd3367e993a2b9ffc3257a318df3fdd48c1f3c8ccdd4ca374974a521/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4d6963726f736f6674253230417a7572652d3233324637453f7374796c653d666c61742d737175617265266c6f676f3d6d6963726f736f66742d617a757265)
+Azure Devops
 
 #### UX/UI
 
@@ -43,28 +52,25 @@ A completar
 - [FRONTEND/](a completar)
     
 - [BACKEND](a completar)
-    
-
-#### LINK PROTOTIPO FUNCIONAL
-    
-- [![figma--v1](a completar)
-    
+      
 
 ------------------------------------------------------
 
-## Pantallas principales
+## 🖥️ Pantallas principales
 
 - Inicio de sesión y registro: (FALTA COMPLETAR CON IMÁGENES)
+![Login](https://github.com/No-Country/s13-15-n-java/assets/136188411/f33cbc92-e617-4506-9e9b-2e0c2dffc765)
 
-- Pantalla de inicio de sesión: 
+- Pantalla de búsqueda de oferta para los jardineros:
+![Búsqueda de oferta filtrado - Jardinero](https://github.com/No-Country/s13-15-n-java/assets/136188411/97689545-3143-49ae-9f46-25af8d32c9e3)
 
-- Pantalla de publicación de oferta de trabajo para algún jardinero:
 
 - Pantalla de perfil del jardinero:
+![Profile - Jardinero](https://github.com/No-Country/s13-15-n-java/assets/136188411/a368d3c7-f147-4f16-901f-c44e187f8779)
 
 --------------------------------------------------------
 
-## ¿Cómo nos organizamos con el equipo?
+## 👐🏽 ¿Cómo nos organizamos con el equipo?
 
 Utilizamos la metodología **Kanban**.
 
@@ -72,25 +78,9 @@ Al ser un equipo grande decidimos hacer reuniones de equipo por rol además de l
 
 Creamos un **MVP** y dividimos las tareas en **sprints** (con duración de una semana):
 
-### Alcance del MVP:
-
-- Landing Page para explicar sobre la aplicación GardenerGo.
-    
-- Funcionalidad de registro de dos perfiles Propietario y Jardinero.
-    
-- Pantalla de inicio de sesión.
-    
-- Un propietario puede crear una o varias ofertas de trabajos de jardinería de su propiedad.
-    
-- El propietario puede ver los perfiles de los jardineros interesados en realizar una tarea en su jardín.
-    
-- Una vez finalizada la tarea en el jardín el propietario puede calificar al jardinero.
-
-- El jardinero puede buscar tareas disponibles dentro del radio de cobertura para ofrecerce voluntariamente.
-
 --------------------------------------------------------------
 
-## INTEGRANTES
+## 👥 INTEGRANTES
   
 |FrontEnd|
 |---|
