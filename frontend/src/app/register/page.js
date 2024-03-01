@@ -1,7 +1,6 @@
 'use client'
-import { registerUser } from "@/queries/usuario";
-import { userLogin } from "@/store/reducers/userReducer";
-import { useDispatch } from "react-redux";
+import { registroJardinero } from "@/queries/jardinero";
+import { registroPropietario } from "@/queries/propietario";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import * as styles from "./styles.module.css"
@@ -11,13 +10,13 @@ export default function Register() {
   const router = useRouter()
 
   const [formData, setFormData] = useState({
-    name: '',
-    lastName: '',
-    email: '',
-    password: '',
-    country: 'Argentina',
-    rol: '',
+    nombre: '',
+    apellido: '',
+    correo: '',
+    ciudad: 2,
+    clave: '',
   });
+  const [rol, setRol] = useState()
   const [errors, setErrors] = useState({});
   const [showForm, setShowForm] = useState(false)
 
@@ -27,26 +26,25 @@ export default function Register() {
       [e.target.id]: e.target.value,
     });
   };
-  const dispatch = useDispatch()
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const newErrors = {};
     // Validaciones básicas
-    if (!formData.name.trim()) {
+    if (!formData.nombre.trim()) {
       newErrors.name = 'El nombre es requerido';
     }
-    if (!formData.lastName.trim()) {
+    if (!formData.apellido.trim()) {
       newErrors.lastName = 'El apellido es requerido';
     }
-    if (!formData.email.trim()) {
+    if (!formData.correo.trim()) {
       newErrors.email = 'El email es requerido';
-    } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
+    } else if (!/^\S+@\S+\.\S+$/.test(formData.correo)) {
       newErrors.email = 'Ingrese un email válido';
     }
-    if (!formData.password.trim()) {
+    if (!formData.clave.trim()) {
       newErrors.password = 'La contraseña es requerida';
-    } else if (formData.password.length < 6) {
+    } else if (formData.clave.length < 6) {
       newErrors.password = 'La contraseña debe tener al menos 6 caracteres';
     }
     setErrors(newErrors);
@@ -54,17 +52,18 @@ export default function Register() {
     if (Object.keys(newErrors).length === 0) {
       // Enviar formulario si no hay errores
       console.log('Formulario enviado:', formData);
-      router.push("/profile");
-
       // Aquí podrías enviar los datos a tu servidor o hacer otra acción
+      if(rol ==="jardinero"){
+        registroJardinero(formData);
+      }else if(rol ==="propietario"){
+        registroPropietario(formData);
+      }
+      router.push("/profile");
     }
   };
 
   const handleClick = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.id]: e.target.value,
-    });
+    setRol(e.target.value)
     setShowForm(!showForm)
   }
 
@@ -72,7 +71,7 @@ export default function Register() {
     <main className={styles.wrap}>
       <section className={`${styles.step} ${showForm ? '' : styles.active}`}>
         <h4 className="-m-3">Soy</h4>
-        <button id="rol" value="jardinero" onClick={handleClick} className={styles.buttonRol}>JARDINERO</button>
+        <button id="rol" value="jardinero" onClick={(handleClick)} className={styles.buttonRol}>JARDINERO</button>
         <button id="rol" value="propietario" onClick={handleClick} className={styles.buttonRol}>PROPIETARIO</button>
       </section>
 
@@ -84,20 +83,20 @@ export default function Register() {
           </header>
           <div className={styles.inputsContainer}>
             <div className={styles.inputContainer}>
-              <label htmlFor="name">Nombre</label>
+              <label htmlFor="nombre">Nombre</label>
               <input
-                id="name"
-                value={formData.name}
+                id="nombre"
+                value={formData.nombre}
                 onChange={handleChange}
                 className={styles.input}
               />
               {errors.name && <p className="text-red-500 relative bottom-0">{errors.name}</p>}
             </div>
             <div className={`${styles.inputContainer} relative`}>
-              <label htmlFor="last-name">Apellido</label>
+              <label htmlFor="apellido">Apellido</label>
               <input
-                id="last-name"
-                value={formData.lastName}
+                id="apellido"
+                value={formData.apellido}
                 onChange={handleChange}
                 className={styles.input}
               />
@@ -106,35 +105,35 @@ export default function Register() {
           </div>
           <div className={styles.inputsContainer}>
             <div className={styles.inputContainer}>
-              <label htmlFor="email">E-mail</label>
+              <label htmlFor="correo">E-mail</label>
               <input
-                id="email"
-                value={formData.email}
+                id="correo"
+                value={formData.correo}
                 onChange={handleChange}
                 className={`${styles.input} ${errors.email && 'border-red-500'}`}
               />
               {errors.email && <p className="text-red-500">{errors.email}</p>}
             </div>
             <div className={styles.inputContainer}>
-              <label htmlFor="password">Contraseña</label>
+              <label htmlFor="clave">Contraseña</label>
               <input
-                id="password"
+                id="clave"
                 type="password"
-                value={formData.password}
+                value={formData.clave}
                 onChange={handleChange}
                 className={`${styles.input} ${errors.password && 'border-red-500'}`}
               />
               {errors.password && <p className="text-red-500">{errors.password}</p>}
             </div>
             <div className={styles.inputContainer}>
-              <label htmlFor="country">País</label>
+              <label htmlFor="ciudad">País</label>
               <select
-                id="country"
-                value={formData.country}
+                id="ciudad"
+                value={formData.ciudad}
                 onChange={handleChange}
                 className={styles.input}
               >
-                <option value="Argentina">Argentina</option>
+                <option value={2}>Argentina</option>
                 <option value="Bolivia">Bolivia</option>
                 <option value="Chile">Chile</option>
                 <option value="Colombia">Colombia</option>
