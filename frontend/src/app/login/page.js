@@ -16,10 +16,12 @@ export default function Login() {
 
   const handleData = (e) => {
     e.preventDefault()
-    //loginUser()
+    loginUser({email :"andres@gmail.com", password:"password"  }).then((res) => {
+      console.log(res);
+    }) 
     localStorage.setItem('user', JSON.stringify({correo: email}));
     console.log(JSON.parse(localStorage.getItem('user')));
-    router.push("/profile");
+    //router.push("/profile");
   };
 
   return (
