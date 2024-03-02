@@ -84,6 +84,10 @@ public class ControllerAdvisor {
                 messageError = "mensaje";
                 messageException = "El historial de trabajo esta con estado 'pendiente'";
                 break;
+            case "class com.nocountry.s13g15.exception.CiudadNoExisteException":
+                messageError = "mensaje";
+                messageException = "La ciudad no existe'";
+                break;
             default:
                 return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                         .body(Collections.singletonMap(exception.getClass().toString(), exception.getMessage()));
