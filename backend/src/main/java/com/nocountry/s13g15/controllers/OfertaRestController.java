@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
@@ -31,8 +32,8 @@ public class OfertaRestController {
 
     @PreAuthorize("hasAuthority('JARDINERO')")
     @GetMapping
-    public ResponseEntity<List<Oferta>> obtenerTodasLasOfertas() {
-        return ResponseEntity.ok(ofertaService.obtenerOfertas());
+    public ResponseEntity<List<Oferta>> filtrarOfertas(@RequestParam(name = "nombre", required = false)String nombre, @RequestParam(name = "gradoComplejidad", required = false)String gradoComplejidad) {
+        return ResponseEntity.ok(ofertaService.filtrarOfertas(nombre, gradoComplejidad));
     }
 
 
