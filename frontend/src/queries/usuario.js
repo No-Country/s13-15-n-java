@@ -8,12 +8,13 @@ const getUser = (id) => {
 const authUser = (id) => {
   return openGetQuery("usuario/" + id);
 };
-const registerUser = (body) => {
-  return openPostQuery("usuario", body);
-};
 
+const loginUser =(body) =>{
+  console.log(body);
+  return openPostQuery("login", body);
+}
 export {
   authUser,
-  registerUser,
-  getUser
+  getUser,
+  loginUser
 };

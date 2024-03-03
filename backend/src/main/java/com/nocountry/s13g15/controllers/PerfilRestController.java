@@ -1,6 +1,7 @@
 package com.nocountry.s13g15.controllers;
 
 import com.nocountry.s13g15.dto.request.PerfilRequestDto;
+import com.nocountry.s13g15.dto.request.PerfilUpdateRequestDto;
 import com.nocountry.s13g15.dto.response.PerfilResponseDto;
 import com.nocountry.s13g15.services.IPerfilService;
 import lombok.RequiredArgsConstructor;
@@ -9,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -32,5 +34,12 @@ public class PerfilRestController {
     @GetMapping("/ver")
     public ResponseEntity<PerfilResponseDto> verPerfil() {
         return ResponseEntity.ok(perfilService.verPerfil());
+    }
+
+    @PreAuthorize("hasAnyAuthority('JARDINERO', 'PROPIETARIO')")
+    @PutMapping
+    public ResponseEntity<Void> editarPerfil(@Valid @RequestBody PerfilUpdateRequestDto perfilUpdateRequestDto) {
+        perfilService.editarPerfil(perfilUpdateRequestDto);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }
