@@ -12,7 +12,7 @@ public interface IOfertaService {
 
     OfertaResponseDto publicarOferta(OfertaRequestDto ofertaRequestDto);
 
-    List<Oferta> obtenerOfertas();
+    List<Oferta> filtrarOfertas(String nombre, String gradoComplejidad);
 
 
 

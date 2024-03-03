@@ -1,10 +1,12 @@
-import { openGetQuery } from "./config";
+import { openPostQuery } from "./config";
 
 
-const getProfile = (id) => {
-  return openGetQuery("jardineros/" + id);
+
+const registroJardinero = (body) => {
+  console.log(body);
+  return openPostQuery("api/vi/jardinero/registrar", body);
 };
 
 export {
-  getProfile
+  registroJardinero,
 };
