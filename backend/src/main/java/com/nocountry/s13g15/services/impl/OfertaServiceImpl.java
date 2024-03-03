@@ -2,12 +2,14 @@ package com.nocountry.s13g15.services.impl;
 
 import com.nocountry.s13g15.dto.request.OfertaRequestDto;
 import com.nocountry.s13g15.dto.response.OfertaResponseDto;
+import com.nocountry.s13g15.entities.Ciudad;
 import com.nocountry.s13g15.entities.Oferta;
 import com.nocountry.s13g15.entities.Usuario;
 import com.nocountry.s13g15.exception.DataFinalException;
 import com.nocountry.s13g15.exception.JardineroNoExisteException;
 import com.nocountry.s13g15.exception.UsuarioNoExistenException;
 import com.nocountry.s13g15.mapper.OfertaRequestToOferta;
+import com.nocountry.s13g15.mapper.OfertaToResponseDto;
 import com.nocountry.s13g15.repositories.OfertaRepository;
 import com.nocountry.s13g15.repositories.UsuarioRepository;
 import com.nocountry.s13g15.services.IOfertaService;
@@ -60,15 +62,14 @@ public class OfertaServiceImpl implements IOfertaService {
     }
 
     @Override
-    public List<Oferta> obtenerOfertas() {
+    public List<Oferta> filtrarOfertas(String nombre, String gradoComplejidad) {
         Long jardineroId = MethodsUtil.getIdUsuarioByToken(token);
-        if(usuarioRepository.findById(jardineroId).orElse(null)==null) throw new JardineroNoExisteException();
-
+        Usuario usuario= usuarioRepository.findById(jardineroId).orElse(null);
+        if(usuario==null) throw new JardineroNoExisteException();
         Date fechaActual = Date.from(LocalDateTime.now().atZone(ZoneId.systemDefault()).toInstant());
-        List<Oferta> ofertas =ofertaRepository.obtenerOfertasPorCiudadYFechaActualAnteriorAInicio(1L, fechaActual).orElseThrow();
+        Long ciudadId = usuario.getCiudad().getId();
 
-
-        return ofertas;
+        return ofertaRepository.obtenerOfertasPorCiudadYFechaActualAnteriorAInicioAndFiltros(ciudadId, fechaActual,nombre, gradoComplejidad).orElseThrow();
     }
 
 
