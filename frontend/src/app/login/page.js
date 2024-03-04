@@ -4,24 +4,18 @@ import Link from "next/link";
 import { loginUser } from "@/queries/usuario";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import {  useDispatch } from 'react-redux';
 
 export default function Login() {
   const router = useRouter()
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const dispatch = useDispatch();
-
-
-  const handleData = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    loginUser({email :"andres@gmail.com", password:"password"  }).then((res) => {
-      console.log(res);
+    await loginUser({email :"andres@gmail.com", password:"password"  }).then((res) => {
+      localStorage.setItem('user', JSON.stringify({userToken: res.data.token}));
     }) 
-    localStorage.setItem('user', JSON.stringify({correo: email}));
-    console.log(JSON.parse(localStorage.getItem('user')));
-    //router.push("/profile");
+    router.push("/profile");
   };
 
   return (
@@ -34,7 +28,7 @@ export default function Login() {
 
         <div>
           <form
-            onSubmit={handleData}
+            onSubmit={handleSubmit}
             className="flex flex-col gap-4 text-center "
           >
             <fieldset className="fieldset">

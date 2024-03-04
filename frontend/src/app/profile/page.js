@@ -1,25 +1,17 @@
 'use client'
-import { useSelector } from "react-redux";
-import { userInfo } from "@/store/reducers/userReducer";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
-import { getUser } from '../../queries/usuario'
 import { Image, Button } from "@nextui-org/react";
 import { LuTrees } from "react-icons/lu";
 import { Works } from "@/components/profile/Works";
+import { useSelector } from "react-redux";
+import { selectUser } from "@/store/reducers/userReducer";
 
+export default function Home() {
 
-export default function Registro() {
-  useEffect(() => {
-    console.log(getUser(3).then(res => console.log(res.data)))
-  }, []);
-  const user = useSelector(userInfo)
   const router = useRouter()
-  useEffect(() => {
-    /*if (!user.email) {
-      router.push("/")
-    }*/
-  })
+  const user = useSelector(selectUser);
+  const fullName = user?.nombre +" " + user?.apellido
+  if(!user) router.push("/")
   return (
     <main className=" h-screen flex-col items-center w-4/5 xs:ml-10 md:ml-20 xl:ml-28">
       <div className="flex flex-col justify-around h-1/2 w-full border-b-2 border-y-lime-950 ">
@@ -29,7 +21,7 @@ export default function Registro() {
         </div>
         <div className="flex w-full items-center">
           <Image className="mr-10 rounded-full size-14 md:size-24 xl:size-24" src={"https://avatars.githubusercontent.com/u/30373425?v=4"} />
-          <div className="font-bold text:lg md:text-xl xl:text-2xl">Pedro Cesaros</div>
+          <div className="font-bold text:lg md:text-xl xl:text-2xl">{fullName}</div>
           <Button  className="text-white md:last:ml-[30%] xl:last:ml-[50%] bg-green " radius="sm">
             Editar Perfil
           </Button>
@@ -54,8 +46,6 @@ export default function Registro() {
           <Works />
         </div>
       </div>
-      {/* <h1>{user.email}</h1> */}
-
     </main>
   );
 }
