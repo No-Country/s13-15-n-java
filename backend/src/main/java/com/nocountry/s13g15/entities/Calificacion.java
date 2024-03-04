@@ -26,7 +26,7 @@ public class Calificacion {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Long id;
-    private String puntaje;
+    private String  puntaje;
     private String comentario;
 
     @ManyToOne
