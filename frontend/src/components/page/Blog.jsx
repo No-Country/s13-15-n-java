@@ -1,21 +1,21 @@
 
 const Blog = () => {
   return (
-    <div className="flex flex-col items-center px-5 mt-24">
-      <div className="text-7xl font-semibold text-center leading-[70.35px] text-cyan-950 max-md:max-w-full max-md:text-4xl">
+    <div className="flex flex-col items-center justify-center px-5 mt-24">
+      <div className="text-7xl font-semibold text-center leading-[70.35px] text-cyan-950 max-lg:max-w-full max-lg:text-4xl">
         Nuestro blog y artículos
       </div>
-      <div className="mt-8 text-base font-medium leading-5 text-center text-stone-900 max-md:max-w-full">
+      <div className="mt-8 text-base font-medium leading-5 text-center text-stone-900 max-lg:max-w-full">
         Leé algunas ideas y noticias sobre jardinería profesional.
       </div>
 
-      <div className="self-stretch mt-24 w-full max-md:mt-10 max-md:max-w-full xl:max-w-[1240px]">
-        <div className="flex gap-5 max-md:flex-col max-md:gap-0">
+      <div className="self-stretch mt-24 w-full max-lg:mt-10 max-lg:max-w-full xl:max-w-[1240px]">
+        <div className="flex gap-5 max-lg:flex-col max-lg:gap-0">
           {/* Card 1 */}
-          <div className="flex flex-col w-[33%] max-md:ml-0 max-md:w-full">
-            <div className="bg-white rounded-md p-4">
+          <div className="flex flex-col w-[33%] max-lg:ml-0 max-lg:w-full mx-auto"> 
+            <div className="bg-white rounded-md p-4 mx-10 lg:mx-6">
               <img
-                className="flex-grow object-cover rounded-lg"
+                className="flex-grow mx-auto object-cover rounded-lg"
                 src="/assets/images/image8.png"
                 alt="Imagen 8"
               />
@@ -53,10 +53,10 @@ const Blog = () => {
             </div>
           </div>
           {/* Card 2 */}
-          <div className="flex flex-col w-[33%] max-md:ml-0 max-md:w-full">
-            <div className="bg-white rounded-md p-4">
+          <div className="flex flex-col w-[33%] max-lg:ml-0 max-lg:w-full mx-auto"> 
+            <div className="bg-white rounded-md p-4 mx-10 lg:mx-6">
               <img
-                className="flex-grow object-cover rounded-lg"
+                className="flex-grow mx-auto object-cover rounded-lg"
                 src="/assets/images/image9.png"
                 alt="Imagen 9"
               />
@@ -94,10 +94,10 @@ const Blog = () => {
             </div>
           </div>
           {/* Card 3 */}
-          <div className="flex flex-col w-[33%] max-md:ml-0 max-md:w-full">
-            <div className="bg-white rounded-md p-4">
+          <div className="flex flex-col w-[33%] max-lg:ml-0 max-lg:w-full mx-auto"> 
+            <div className="bg-white rounded-md p-4 mx-10 lg:mx-6">
               <img
-                className="flex-grow object-cover rounded-lg"
+                className="flex-grow mx-auto object-cover rounded-lg"
                 src="/assets/images/image10.png"
                 alt="Imagen 10"
               />
@@ -141,4 +141,5 @@ const Blog = () => {
 }
 
 export default Blog;
+
 

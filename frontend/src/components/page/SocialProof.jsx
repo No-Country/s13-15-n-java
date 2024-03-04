@@ -1,16 +1,20 @@
 
 const SocialProof = () => {
     return (
-        <div className="flex flex-col items-center px-5">
-          <div className="mt-24 text-7xl font-semibold text-center leading-[70.35px] text-cyan-950 max-md:mt-10 max-md:max-w-full max-md:text-4xl">
-            Vea lo que dicen nuestros clientes sobre{" "}
-            <span className="text-[#53BC65]">GardenerGo</span>
-          </div>
-          <div className="self-center mt-8 text-base font-medium leading-6 text-center text-stone-900 w-[651px] max-md:max-w-full">
-            Estos son algunos de los comentarios y reseñas de los propietarios que
+      <div className="flex flex-col px-5 mt-24 items-center">
+      <div className="self-center text-7xl font-semibold text-center leading-[70.35px] text-[#073A38] md:w-[1000px] max-md:max-w-full max-md:text-4xl">
+        <span className="text-[#073A38]">
+          Vea lo que dicen nuestros clientes sobre{" "}
+            <span className="text-[#53BC65]">GardenerGo</span></span>
+      </div>
+      
+      <div className="self-center mt-8 text-base font-medium leading-6 text-center md:w-[800px] max-md:max-w-full">
+      Estos son algunos de los comentarios y reseñas de los propietarios que
             confiaron en los profesionales de GreeGo, la atención, el
             profesionalismo y muchas otras cosas.
-          </div>
+      </div>
+
+        
           
           <div className="mt-20 w-full max-md:mt-10 max-md:max-w-full xl:max-w-[1240px]">
             <div className="flex gap-5 max-md:flex-col max-md:gap-0 max-md:w-full">
@@ -122,7 +126,7 @@ const SocialProof = () => {
             <div className="flex gap-5 max-md:flex-col max-md:gap-0 max-md:">
               
               {/* Card 3 */}
-              <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
+              <div className="hidden md:flex flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
                 <div className="flex grow gap-0 justify-between max-md:flex-wrap max-md:mt-5 max-md:max-w-full">
                 <img
                     loading="lazy"
@@ -172,7 +176,7 @@ const SocialProof = () => {
                 </div>
               </div>
               {/* Card 4 */}
-              <div className="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
+              <div className="hidden md:flex flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
                 <div className="flex grow gap-0 justify-between max-md:flex-wrap max-md:mt-5 max-md:max-w-full">
                   <img
                     loading="lazy"

@@ -1,0 +1,52 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  background-color: var(--white);
+  color: var(--black);
+  width: 100%;
+  padding: 40px;
+  gap: 40px;
+}
+
+.title{
+  margin-right: auto;
+}
+
+.form{
+  display: flex;
+  gap: 80px;
+}
+
+.formCol{
+  display: flex;
+  flex-direction: column;
+  width:fit-content;
+  gap: 30px;
+}
+
+.formCol input, .formCol select{
+  color: var(--green-dark);
+  display: block;
+  min-width: 400px;
+  height: 50px;
+  background-color: var(--white);
+  border: 1px solid var(--black);
+  border-radius: 10px;
+}
+.formCol textarea{
+  color: var(--green-dark);
+  display: block;
+  min-width: 400px;
+  min-height: 128px;
+  background-color: var(--white);
+  border: 1px solid var(--black);
+  border-radius: 10px;
+}
+.formCol button{
+  background-color: var(--green-dark);
+  color: var(--white);
+  min-width: 400px;
+  height: 50px;
+  border-radius: 10px;
+}
