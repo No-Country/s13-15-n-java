@@ -9,7 +9,7 @@ const Hero = () => {
         <div className="flex items-center ml-10 sm:ml-20">
           <img
             loading="lazy"
-            src='/assets/images/logo.png'
+            src="/logo.svg"
             className="w-auto"
           /> 
         </div>
@@ -58,7 +58,7 @@ const Hero = () => {
       </nav>
 
       {/* Hero content */}
-      <div className="bg-cover bg-center w-full h-[1024px]" style={{backgroundImage: "url('/assets/bg-heroo.png')"}}>
+      <div className="bg-cover bg-center w-full h-[1024px] bg-[url('/Placeholder.svg')]">
         <div className="flex flex-col items-center h-full">
           <h1 className="hidden xl:flex text-[#edfbf2] mt-48 text-[70px] lg:text-[128px] md:text-[100px] lg:mx-100 text-center font-semibold leading-[128px] max-lg:leading-[90px]">
             El jardín <br></br> como arte
