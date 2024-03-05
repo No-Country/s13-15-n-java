@@ -7,4 +7,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface HistorialTrabajoRepository extends JpaRepository<HistorialTrabajo, Long> {
 
+    Boolean existsByProcesoTrabajoId(Long procesoTrabajoId);
+
 }
