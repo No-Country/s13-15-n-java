@@ -3,10 +3,9 @@ import axios from "axios";
 const queryPath = process.env.NEXT_PUBLIC_QUERIES;
 
 const getQuery = (direction, token) => {
-
   return axios.get(`${queryPath}/${direction}`, {
     headers: {
-      Authorization: "Bearer " + token,
+      Authorization: token,
     },
   });
 };
@@ -21,7 +20,7 @@ const postQuery = (direction, body, token) => {
     if (token) {
       return axios.post(`${queryPath}/${direction}`, body, {
         headers: {
-          Authorization: "Bearer " + token,
+          Authorization: token,
         },
       });
     } else {

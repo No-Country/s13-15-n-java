@@ -43,4 +43,3 @@ const Owner = () => {
 }
 
 export default Owner
-
