@@ -1,9 +1,7 @@
 package com.nocountry.s13g15.controllers;
 
 import com.nocountry.s13g15.dto.request.CalificacionRequestDto;
-import com.nocountry.s13g15.dto.request.OfertaRequestDto;
 import com.nocountry.s13g15.dto.response.CalificacionResponseDto;
-import com.nocountry.s13g15.dto.response.OfertaResponseDto;
 import com.nocountry.s13g15.services.impl.CalificacionServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
