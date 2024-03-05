@@ -1,22 +1,21 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  value: 0,
+  offers :[]
 }
 export const gardenerReducer = createSlice({
   name: 'gardener',
   initialState,
   reducers: {
-    increment: (state) => {
-      state.value += 1
+    setOffers: (state, action) => {
+      const offers = action.payload;
+      state.offers = offers
     },
-    decrement: (state) => {
-      state.value -= 1
-    }
   },
 })
 
-export const { increment, decrement } = gardenerReducer.actions
-export const selectValue = (state) => state.gardener.value;
+export const { setOffers } = gardenerReducer.actions
+export const selectValue = (state) => state.gardener;
+export const selectOffers = (state) => state.gardener.offers;
 
 export default gardenerReducer.reducer

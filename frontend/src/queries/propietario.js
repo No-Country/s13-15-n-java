@@ -1,12 +1,10 @@
-import { openPostQuery } from "./config";
+import { postQuery } from "./config";
 
-
-
-const registroPropietario = (body) => {
+const postOffer = (body, token) => {
   console.log(body);
-  return openPostQuery("api/v1/propietario/registrar", body);
+  return postQuery("api/v1/oferta/publicar", body, token);
 };
 
 export {
-  registroPropietario,
+  postOffer,
 };

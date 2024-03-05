@@ -1,12 +1,9 @@
-import { openPostQuery } from "./config";
+import { getQuery } from "./config";
 
-
-
-const registroJardinero = (body) => {
-  console.log(body);
-  return openPostQuery("api/v1/jardinero/registrar", body);
+const getOffers = (params, token) => {
+  return getQuery("api/v1/oferta"+ params, token);
 };
 
 export {
-  registroJardinero,
+  getOffers,
 };
