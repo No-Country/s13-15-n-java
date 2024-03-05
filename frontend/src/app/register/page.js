@@ -13,7 +13,7 @@ export default function Register() {
     nombre: '',
     apellido: '',
     correo: '',
-    ciudad: 2,
+    ciudadId: 2,
     clave: '',
   });
   const [rol, setRol] = useState()

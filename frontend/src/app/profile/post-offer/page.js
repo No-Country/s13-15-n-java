@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react';
 import * as styles from "./styles.module.css"
+import { postOffer } from '@/queries/propietario';
 
 export default function PostOffer() {
   const [title, setTitle] = useState('');
@@ -27,10 +28,21 @@ export default function PostOffer() {
       setErrors(errors);
       return;
     }
-
-    // Envía el formulario si no hay errores
-    // Aquí puedes agregar la lógica para enviar los datos al servidor
-    console.log('Formulario enviado correctamente!');
+    const {userToken} = JSON.parse(localStorage.getItem('user'))
+    const offerBody = {
+      nombre: title,
+      descripcion: description,
+      gradoComplejidad: complexity,
+      fechaInicio: startDate,
+      fechaFin: expirationDate,
+      fotoOferta: "foto",
+      direccion: "direccion",
+      precio: paymentDue
+    }
+    postOffer(offerBody, userToken).then((res) => {
+      console.log(res);
+      console.log('Formulario enviado correctamente!');
+    })
   };
 
   return (
@@ -51,9 +63,9 @@ export default function PostOffer() {
           <label>
             Complejidad
             <select type="text" value={complexity} onChange={(e) => setComplexity(e.target.value)} >
-              <option>Fácil</option>
-              <option>Medio</option>
-              <option>Difícil</option>
+              <option value="Fácil">Fácil</option>
+              <option value="Medio">Medio</option>
+              <option value="Difícil">Difícil</option>
             </select>
             {errors.complexity && <span className="text-red-500">{errors.complexity}</span>}
           </label>
