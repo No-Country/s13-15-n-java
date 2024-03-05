@@ -1,8 +1,10 @@
 import { Works } from "./Works"
 import { Image, Button } from "@nextui-org/react";
 import { LuTrees } from "react-icons/lu";
-
-const Owner = () => {
+import { useSelector } from "react-redux";
+import { selectUser } from "@/store/reducers/userReducer";
+const Owner = ({user}) => {
+  console.log(user);
   return (
     <main className=" h-screen flex-col items-center w-4/5 xs:ml-10 md:ml-20 xl:ml-28">
         <div className="flex flex-col justify-around h-1/2 w-full border-b-2 border-y-lime-950 ">

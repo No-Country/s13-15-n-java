@@ -1,10 +1,13 @@
 'use client'
 import Link from "next/link"
 import Image from "next/image"
-
+import { useDispatch } from "react-redux"
+import { setUser } from "@/store/reducers/userReducer"
 export default function LayoutJardinero({children}){
+  const dispatch = useDispatch()
   const handleExit = () =>{
     localStorage.removeItem("user");
+    dispatch(setUser(null))
   }
   return (
     <main className="flex">

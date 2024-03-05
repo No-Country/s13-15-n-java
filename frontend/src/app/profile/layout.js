@@ -19,18 +19,19 @@ export default function DashboardLayout({ children}) {
       const {userToken} = JSON.parse(localStorage.getItem('user'))
       getUser(userToken).then(res => {
         dispatch(setUser(res.data));
-      })
-      getOffers("",userToken).then(res => {
-        dispatch(setOffers(res.data));
+        if(res.data.rolId === 2){
+          getOffers("",userToken).then(res => {
+            dispatch(setOffers(res.data));
+          })
+        }
       })
     }
+    if(!localStorage.getItem('user')) router.push("/login")
   },[user])
-  useEffect(() => {
-    if(!user) router.push("/login")
-  },[user])
-  if(user.rolId === 1){
+
+  if(user?.rolId === 1){
     return <LayoutPropietario>{children}</LayoutPropietario>
-  }else if(user.rolId === 2) {
+  }else if(user?.rolId === 2) {
     return <LayoutJardinero>{children}</LayoutJardinero>
   }
 }

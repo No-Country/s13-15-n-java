@@ -10,10 +10,11 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    loginUser({email, password}).then((res) => {
+    await loginUser({email, password}).then((res) => {
       localStorage.setItem('user', JSON.stringify({userToken: res.data.token}));
+      console.log(res.data.token);
       router.push("/profile");
     }) 
 
