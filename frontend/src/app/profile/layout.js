@@ -28,9 +28,9 @@ export default function DashboardLayout({ children}) {
   useEffect(() => {
     if(!user) router.push("/login")
   },[user])
-  if(user.correo === "jarlinfonseca@gmail.com"){
-    return <LayoutJardinero>{children}</LayoutJardinero>
-  }else if(user.correo === "andres@gmail.com") {
+  if(user.rolId === 1){
     return <LayoutPropietario>{children}</LayoutPropietario>
+  }else if(user.rolId === 2) {
+    return <LayoutJardinero>{children}</LayoutJardinero>
   }
 }

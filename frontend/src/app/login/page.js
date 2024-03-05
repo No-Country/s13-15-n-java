@@ -14,8 +14,8 @@ export default function Login() {
     e.preventDefault()
     loginUser({email, password}).then((res) => {
       localStorage.setItem('user', JSON.stringify({userToken: res.data.token}));
+      router.push("/profile");
     }) 
-    router.push("/profile");
   };
 
   return (

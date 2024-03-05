@@ -6,8 +6,7 @@ export const userReducer = createSlice({
   initialState,
   reducers: {
     setUser: (state, action) => {
-  
-      const { nombre, apellido, correo, ciudad, conocimientos,descripcion,experiencia } = action.payload;
+      const { nombre, apellido, correo, ciudad, conocimientos,descripcion,experiencia,rolId } = action.payload;
       state.nombre = nombre;
       state.apellido = apellido;
       state.correo = correo;
@@ -15,6 +14,7 @@ export const userReducer = createSlice({
       state.conocimientos = conocimientos;
       state.descripcion = descripcion;
       state.experiencia = experiencia;
+      state.rolId = rolId;
     },
   },
 })
