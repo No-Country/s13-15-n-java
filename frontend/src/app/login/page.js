@@ -8,8 +8,10 @@ import { useDispatch } from "react-redux";
 
 export default function Login() {
   const router = useRouter();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isPassword,setIspassword] = useState(true);
 
   const dispatch = useDispatch();
 
@@ -58,14 +60,14 @@ export default function Login() {
 
             <fieldset className="flex">
               <input
-                type="password"
+                type={isPassword?'password':'text'}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Contraseña"
                 className="inputForm"
               />
               <div className="boxIconInput">
-                <img src="/Eye.svg" alt="" />
+                <img onClick={()=>setIspassword(!isPassword)} src="/Eye.svg" alt="" />
               </div>
             </fieldset>
 
