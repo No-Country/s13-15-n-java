@@ -88,12 +88,12 @@ const WhoWeAre = () => {
               <div className="flex flex-col h-full">
                 <img
                   className="flex-grow h-32 object-cover rounded-lg"
-                  src="/assets/images/image1.png"
+                  src="/WhoWeAre1.svg"
                   alt="Imagen 1"
                 />
                 <img
                   className="flex-grow h-32 object-cover rounded-lg mt-5"
-                  src="/assets/images/image2.png"
+                  src="/WhoWeAre2.svg"
                   alt="Imagen 2"
                 />
               </div>
