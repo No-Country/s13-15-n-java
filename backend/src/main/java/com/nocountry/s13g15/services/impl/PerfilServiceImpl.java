@@ -1,10 +1,14 @@
 package com.nocountry.s13g15.services.impl;
 
 import com.nocountry.s13g15.dto.request.PerfilRequestDto;
+import com.nocountry.s13g15.dto.request.PerfilUpdateRequestDto;
 import com.nocountry.s13g15.dto.response.PerfilResponseDto;
 import com.nocountry.s13g15.entities.Ciudad;
 import com.nocountry.s13g15.entities.Perfil;
+import com.nocountry.s13g15.entities.Rol;
 import com.nocountry.s13g15.entities.Usuario;
+import com.nocountry.s13g15.exception.CiudadNoExisteException;
+import com.nocountry.s13g15.exception.InformacionPerfilNoRegistradaException;
 import com.nocountry.s13g15.exception.UsuarioNoExistenException;
 import com.nocountry.s13g15.mapper.PerfilRequestToPerfil;
 import com.nocountry.s13g15.repositories.CiudadRepository;
@@ -57,12 +61,34 @@ public class PerfilServiceImpl implements IPerfilService {
         return mapearDatos(usuario, usuario.getPerfil(), ciudad);
     }
 
+    @Override
+    public void editarPerfil(PerfilUpdateRequestDto perfilUpdateRequestDto) {
+        Long idUsuario = MethodsUtil.getIdUsuarioByToken(token);
+        Usuario usuario = usuarioRepository.findById(idUsuario).orElseThrow();
+        if(usuario.getPerfil()==null) throw new InformacionPerfilNoRegistradaException();
+        usuario.setNombre(perfilUpdateRequestDto.getNombre());
+        usuario.setApellido(perfilUpdateRequestDto.getApellido());
+
+        Ciudad ciudad = ciudadRepository.findById(perfilUpdateRequestDto.getCiudadId()).orElse(null);
+        if(ciudad==null) throw new CiudadNoExisteException();
+        usuario.setCiudad(ciudad);
+
+        Perfil perfil = perfilRepository.findById(usuario.getPerfil().getId()).orElseThrow();
+        perfil.setConocimientos(perfilUpdateRequestDto.getConocimientos());
+        perfil.setDescripcion(perfilUpdateRequestDto.getDescripcion());
+        perfil.setExperiencia(perfilUpdateRequestDto.getExperiencia());
+
+        perfilRepository.save(perfil);
+        usuarioRepository.save(usuario);
+    }
+
     private PerfilResponseDto mapearDatos(Usuario usuario, Perfil perfil, Ciudad ciudad){
         PerfilResponseDto perfilResponseDto = new PerfilResponseDto();
         perfilResponseDto.setNombre(usuario.getNombre());
         perfilResponseDto.setApellido(usuario.getApellido());
         perfilResponseDto.setCorreo(usuario.getCorreo());
         perfilResponseDto.setCiudad(ciudad);
+        perfilResponseDto.setRolId(usuario.getRol().getId());
         if(perfil!=null) {
             perfilResponseDto.setDescripcion(perfil.getDescripcion());
             perfilResponseDto.setExperiencia(perfil.getExperiencia());

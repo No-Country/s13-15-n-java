@@ -13,6 +13,7 @@ export default function Registro() {
       <Owner user={user}/>
     );
   }else if(user.rolId === 2){
+
     return(
       <Gardener />
     )

@@ -76,6 +76,30 @@ public class ControllerAdvisor {
                 messageError = "mensaje";
                 messageException = "El usuario no existe.";
                 break;
+            case "class com.nocountry.s13g15.exception.HistorialTrabajoNoExistenException":
+                messageError = "mensaje";
+                messageException = "El historial de trabajo no existe.";
+                break;
+            case "class com.nocountry.s13g15.exception.HistorialTrabajoEstaPendienteException":
+                messageError = "mensaje";
+                messageException = "El historial de trabajo esta con estado 'pendiente'";
+                break;
+            case "class com.nocountry.s13g15.exception.CiudadNoExisteException":
+                messageError = "mensaje";
+                messageException = "La ciudad no existe'";
+                break;
+            case "class com.nocountry.s13g15.exception.ProcesoTrabajoNoExistenException":
+                messageError = "mensaje";
+                messageException = "El proceso de trabajo no existe.";
+                break;
+            case "class com.nocountry.s13g15.exception.HistorialTrabajoYaRegistradoException":
+                messageError = "mensaje";
+                messageException = "El historial de trabajo ya existe.";
+                break;
+            case "class com.nocountry.s13g15.exception.ProcesoTrabajoNoAprobadoException":
+                messageError = "mensaje";
+                messageException = "El status de aprobacion del jardinero en el proceso de trabajo aun no ha sido aprobado.";
+                break;
             default:
                 return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                         .body(Collections.singletonMap(exception.getClass().toString(), exception.getMessage()));
