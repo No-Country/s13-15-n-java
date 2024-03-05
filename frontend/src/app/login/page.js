@@ -4,38 +4,46 @@ import Link from "next/link";
 import { loginUser } from "@/queries/usuario";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import {  useDispatch } from 'react-redux';
+import { useDispatch } from "react-redux";
 
 export default function Login() {
-  const router = useRouter()
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const dispatch = useDispatch();
 
-
   const handleData = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     //loginUser()
-    localStorage.setItem('user', JSON.stringify({correo: email}));
-    console.log(JSON.parse(localStorage.getItem('user')));
+    localStorage.setItem("user", JSON.stringify({ correo: email }));
+    console.log(JSON.parse(localStorage.getItem("user")));
     router.push("/profile");
   };
 
   return (
-    <main className="flex min-h-screen overflow-hidden bg-[url('/imgLogin.png')] bg-no-repeat bg-cover ">
-      <section className="flex items-center m-auto justify-between w-[80%] ">
-        <div>
-          <h2 className="text-6xl font-medium text-white">Bienvenido@ a </h2>
-          <p className="text-3xl text-white">Encontra tu jardinero</p>
+    <main className="container-screen">
+      <section className="container-content">
+        <div className="sm text-center lg:text-start">
+          <h2 className="hidden sm:block font-medium text-[var(--white)]">
+            Bienvenido@ a{" "}
+          </h2>
+          <img
+            src="/logo.svg"
+            alt="img"
+            className="m-auto sm:my-2 lg:mx-0 lg:w-[500px]"
+          />
+          <p className="hidden sm:block text-2xl text-[var(--white)]">
+            Encontra tu jardinero
+          </p>
         </div>
 
-        <div>
+        <div className="self-center">
           <form
             onSubmit={handleData}
             className="flex flex-col gap-4 text-center "
           >
-            <fieldset className="fieldset">
+            <fieldset className="flex">
               <input
                 type="email"
                 value={email}
@@ -48,7 +56,7 @@ export default function Login() {
               </div>
             </fieldset>
 
-            <fieldset className="fieldset">
+            <fieldset className="flex">
               <input
                 type="password"
                 value={password}
@@ -61,11 +69,13 @@ export default function Login() {
               </div>
             </fieldset>
 
-            <p className="paragraph">Olvidaste la contraseña ?</p>
-            <button type="submit" className="bg-[#53BC65] text-black rounded p-2">
+            <p className="paragraph text-[var(--white)]">
+              Olvidaste la contraseña ?
+            </p>
+            <button className="bg-[#53BC65] text-black rounded p-2">
               Iniciar Sesión
             </button>
-            <p className="paragraph">No tienes cuenta ?</p>
+            <p className="paragraph text-[var(--white)]">No tienes cuenta ?</p>
             <Link href="/register" className="text-[#53BC65] font-medium">
               REGISTRATE AHORA
             </Link>
