@@ -54,7 +54,7 @@ export default function MyOffers() {
   const [isHidden,setiSHidden] = useState(false)
 
   return (
-    <main className=" relative p-7 md:pt-9 w-full md:w-[80%] md:ml-auto  md:p-16">
+    <main className="bg-[#EDFBF2] h-[100vh] relative p-7 md:pt-9 w-full md:w-[80%] md:ml-auto  md:p-16">
       <h1 className="text-xl md:text-3xl">OFERTAS</h1>
       <h2 className="text-xs md:text-xl font-light">FILTROS</h2>
 
@@ -63,7 +63,7 @@ export default function MyOffers() {
           <label htmlFor="">Titulo</label>
           <input 
           placeholder="poda de arbusto"
-          type="text" className="border border-[#000] rounded-md text-xs p-2" />
+          type="text" className="border bg-[#EDFBF2] border-[#000] rounded-md text-xs p-2" />
         </fieldset>
 
         <fieldset className="flex flex-col w-[150px] ">
@@ -71,7 +71,7 @@ export default function MyOffers() {
           <input 
 
           placeholder="menciona facil,medio,dificil"
-          type="text" className="border border-[#000] rounded-md text-xs p-2" />
+          type="text" className=" bg-[#EDFBF2] border border-[#000] rounded-md text-xs p-2" />
         </fieldset>
 
         <button className="bg-black p-2 text-xs self-end rounded-lg text-white">
@@ -124,7 +124,7 @@ export default function MyOffers() {
 
 
 {isHidden?(
-  <section className="absolute top-0 left-0 right-0 bottom-0 m-auto  rounded-md  bg-[#EDFBF2] z-40 h-[500px]  w-[95%] py-7 px-5 ">
+  <section className="absolute top-0 left-0 right-0 bottom-0 m-auto  rounded-md  bg-white border border-gray-500 z-40 h-[500px]  w-[95%] py-7 px-5 ">
   <Image
     src="/arrowL.svg"
     width={30}
@@ -151,7 +151,7 @@ export default function MyOffers() {
 
 
   <p>{titlePost}</p>
-  <p>Cantidad de postulantes ( 4 )</p>
+  <p>Cantidad de postulantes ( 3 )</p>
 
   <div className="flex justify-center items-center h-[400px] gap-2">
     {postulantes.map((postulante) => (

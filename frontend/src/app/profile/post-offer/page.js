@@ -46,7 +46,7 @@ export default function PostOffer() {
   };
 
   return (
-    <main className={styles.wrap}>
+    <main className='h-[100vh] w-[80%] bg-[#EDFBF2] ml-auto flex flex-col p-10'>
       <h5 className={styles.title}>Publicar oferta</h5>
       <form onSubmit={handleSubmit} className={styles.form}>
         <div className={styles.formCol}>
