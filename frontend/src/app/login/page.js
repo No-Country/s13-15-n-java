@@ -19,8 +19,6 @@ export default function Login() {
       console.log(res.data.token);
       router.push("/profile");
     }) 
-
-
   };
 
   return (
