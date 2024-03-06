@@ -5,6 +5,7 @@ import com.nocountry.s13g15.dto.request.PerfilUpdateRequestDto;
 import com.nocountry.s13g15.dto.response.PerfilResponseDto;
 import com.nocountry.s13g15.entities.Ciudad;
 import com.nocountry.s13g15.entities.Perfil;
+import com.nocountry.s13g15.entities.Rol;
 import com.nocountry.s13g15.entities.Usuario;
 import com.nocountry.s13g15.exception.CiudadNoExisteException;
 import com.nocountry.s13g15.exception.InformacionPerfilNoRegistradaException;
@@ -87,6 +88,7 @@ public class PerfilServiceImpl implements IPerfilService {
         perfilResponseDto.setApellido(usuario.getApellido());
         perfilResponseDto.setCorreo(usuario.getCorreo());
         perfilResponseDto.setCiudad(ciudad);
+        perfilResponseDto.setRolId(usuario.getRol().getId());
         if(perfil!=null) {
             perfilResponseDto.setDescripcion(perfil.getDescripcion());
             perfilResponseDto.setExperiencia(perfil.getExperiencia());

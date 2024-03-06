@@ -15,4 +15,5 @@ public class PerfilResponseDto {
     private String descripcion;
     private Double experiencia;
     private String conocimientos;
+    private Long rolId;
 }

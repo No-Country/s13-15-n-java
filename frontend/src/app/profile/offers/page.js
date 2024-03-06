@@ -2,8 +2,10 @@
 import { useState } from 'react';
 import Link from "next/link";
 import Image from "next/image";
+import { selectOffers } from "@/store/reducers/gardenerReducer";
+import { useSelector } from "react-redux";
 
-function Offers() {
+export default function Offers() {
   const [searchTerm, setSearchTerm] = useState("");
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
@@ -26,8 +28,17 @@ function Offers() {
     setShowOptions(false);
   };
 
+  // const offers = useSelector(selectOffers)
+  // console.log(offers);
+  
   return (
     <main className="flex flex-col w-4/5 bg-[#edfbf2] max-md:ml-0 max-md:w-full">
+
+      {/* {offers.map((offer) => {
+        return (
+          <p>{offer.nombre}</p>
+        )
+      })} */}
       <div className="flex flex-col grow mt-20 max-md:mt-10 max-md:max-w-full xs:mx-10 md:mx-16 xl:mx-20">
         <div className="flex flex-col w-[16%] text-3xl font-semibold max-md:ml-0 max-md:w-full">
           BÚSQUEDA
@@ -36,9 +47,6 @@ function Offers() {
           FILTROS
         </div>
         <div className="flex gap-5 items-end pr-20 mt-5 w-full max-md:flex-wrap max-md:pr-5 max-md:max-w-full">
-
-
-
 
           <div className="flex flex-col flex-1" style={{ maxWidth: '300px' }}>
             <div className="text-base font-medium font-semibold leading-5">
@@ -81,9 +89,6 @@ function Offers() {
               )}
             </div>
           </div>
-
-
-
 
           <div className="flex justify-center items-center px-5 mt-6 w-16 h-16 cursor-pointer rounded-xl aspect-square bg-[#073A38]">
             <div className="flex gap-2">
@@ -221,4 +226,3 @@ function Offers() {
   );
 }
 
-export default Offers
