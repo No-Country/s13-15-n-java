@@ -6,9 +6,9 @@ const Gardener = () => {
     <main className="flex flex-col w-4/5 bg-[#edfbf2] max-md:ml-0 max-md:w-full">
           <div className="flex flex-col grow mt-20 max-md:mt-10 max-md:max-w-full xs:mx-10 md:mx-16 xl:mx-20">
             <div className="max-md:max-w-full">
-              <div className="flex gap-5 max-md:flex-col max-md:gap-0 max-md:">
+              <div className="flex gap-5 max-md:flex-col max-md:gap-0 max-md:w-full">
                 <div className="flex flex-col w-[16%] max-md:ml-0 max-md:w-full">
-                  <div className="flex flex-col grow text-3xl font-semibold leading-8 text-center whitespace-nowrap text-stone-900 max-md:mt-8">
+                  <div className="flex flex-col grow text-3xl font-semibold leading-8 text-center whitespace-nowrap max-md:mt-8">
                     <div>MI PERFIL</div>
                     <img
                       loading="lazy"
