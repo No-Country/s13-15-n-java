@@ -19,8 +19,6 @@ export default function Login() {
       console.log(res.data.token);
       router.push("/profile");
     }) 
-
-
   };
 
   return (
@@ -66,8 +64,10 @@ export default function Login() {
                 placeholder="Contraseña"
                 className="inputForm"
               />
-              <div className="boxIconInput">
-                <img onClick={()=>setIspassword(!isPassword)} src="/Eye.svg" alt="" />
+              <div className="boxIconInput cursor-pointer">
+                <button type="button" onClick={()=>setIspassword(!isPassword)} >
+                <img  src="/Eye.svg" alt="" />
+                </button>
               </div>
             </fieldset>
 

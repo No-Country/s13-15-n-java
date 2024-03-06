@@ -1,45 +1,64 @@
-import { Works } from "./Works"
-import { Image, Button } from "@nextui-org/react";
-import { LuTrees } from "react-icons/lu";
 
+import { Image } from "@nextui-org/react";
+import { useSelector } from "react-redux";
+import { selectUser } from "@/store/reducers/userReducer";
 const Owner = () => {
-  return (
-    <main className=" h-screen flex-col items-center w-4/5 xs:ml-10 md:ml-20 xl:ml-28">
-        <div className="flex flex-col justify-around h-1/2 w-full border-b-2 border-y-lime-950 ">
-          <div className="flex items-center">
-            <p className="font-bold mr-10 text-md md:text-2xl xl:text-2xl ">MI PERFIL</p>
-            <p className="text-green ">Propietario</p>
-          </div>
-          <div className="flex w-full items-center">
-            <Image className="mr-10 rounded-full size-14 md:size-24 xl:size-24" src={"https://avatars.githubusercontent.com/u/30373425?v=4"} />
-            <div className="font-bold text:lg md:text-xl xl:text-2xl">Pedro Cesaros</div>
-            <Button  className="text-white md:last:ml-[30%] xl:last:ml-[50%] bg-green " radius="sm">
-              Editar Perfil
-            </Button>
-          </div>
-          <div className="flex items-center">
-            <div className="mr-20">Mi Propiedad</div>
-            <button className="text-green cursor-pointer" variant="light" >+Agregar Propiedad</button>
-          </div>
-          <div className="w-80 h-24 bg-green2 flex items-center">
-            <LuTrees className="size-16 mx-4 text-green" />
-            <div>
-              <p className="text-green font-bold text-lg">Basavilbaso</p>
-              <p className="text-green font-bold text-lg">1234 N. Aguet St</p>
-            </div>
-          </div>
-        </div>    
-        <div className="flex flex-col max-h-max justify-around md:h-1/2 xl:h-1/2 ">
-          <div className="font-bold">Trabajos Finalizados</div>
-          <div className="h-1/4 md:h-3/4 xl:h-3/4 flex flex-col justify-around">
-            <Works />
-            <Works />
-            <Works />
-          </div>
-        </div>
-        {/* <h1>{user.email}</h1> */}
-      </main> 
-  )
-}
+  const userOff = useSelector(selectUser);
 
-export default Owner
+  console.log(userOff);
+
+
+  return (
+    <main className="h-screen w-full  p-2 bg-[#EDFBF2] sm:w-[80%] md:p-16 ml-auto">
+        <div className="flex items-center gap-2">
+          <h1 className="text-base md:text-xl ">MI PERFIL</h1>
+          <p className="text-[#67C477]">{userOff.rolId==1?"Propietario":""}</p>
+        </div>
+
+      <section className="flex flex-col gap-2  sm:flex-row sm:items-center sm:justify-between ">
+
+        <article className="flex gap-4 items-center">
+          <div className="rounded-full w-[100px] h-[100px] bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpXuPQxl6sg9rhXNDk9ZE5rHnYgj-V2u3O8g&usqp=CAU')] bg-no-repeat bg-cover "></div>
+   
+          <div className="md:ml-[30px]">
+            <p className="text-xs">
+            {userOff.nombre} {userOff.apellido}
+            </p>
+            <p className="text-xs">
+              <div className="flex gap-2">
+            <Image src="/ubication.svg" width={15} height={5} alt="img" />
+            De  {userOff.ciudad.departamento.pais.nombre}
+
+              </div>
+            </p>
+          </div>
+          </article>
+
+          <article className="bg-[#BBF7D1] mt-3 p-3 rounded-md min-w-[300px]">
+            <p>Mi Propiedad:</p>
+            <div className="flex justify-between">
+            <Image src="/Frame.svg"  width={35} height={5} alt="img" />
+              <div>
+                <p>ciudad: {userOff.ciudad.departamento.nombre} </p>
+                <p>Direccion: 1234 </p>
+
+              </div>
+            </div>
+          </article>
+
+          <button className="bg-[#0E0E0E] p-2 md:px-6 md:h-[40px] gap-3 flex items-center text-center justify-center rounded-md">
+          <Image src="/pencilicon.svg"  width={35} height={5} alt="img" />
+             <p className="text-white">
+              Editar perfil 
+              </p>
+            </button>
+          
+      
+      </section>
+      <div className=" mx-auto  my-[20px]  w-[100%] h-[.5px] bg-black"></div>
+
+    </main>
+  );
+};
+
+export default Owner;
