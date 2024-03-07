@@ -15,10 +15,9 @@ const ContactUs = () => {
         <div className="flex max-md:flex-col max-md:gap-0 max-md:w-full rounded-xl overflow-hidden">
           <div className="flex flex-col w-[44%] max-md:ml-0 max-md:w-full">
             <img
-              loading="lazy"
               className="flex-grow h-32 object-cover hidden lg:flex md:flex"
-              src="/assets/images/image11.png"
-              alt="Imagen 11"
+              src="/contactPic.svg"
+              alt="Imagen"
             />
           </div>
           

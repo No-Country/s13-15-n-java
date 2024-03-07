@@ -36,9 +36,9 @@ const OurServices = () => {
           <div className="flex flex-col justify-center px-6 py-10 mx-auto lg:w-[404px] lg:h-[315px] font-semibold bg-emerald-50 rounded-2xl shadow-lg leading-[120%] max-md:px-5 max-md:mt-6 max-md:w-full">
             <div className="flex gap-5 justify-between text-3xl leading-9 text-[#53BC65]">
               <img
-                  loading="lazy"
-                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/53e9dda5d063961d6684cf5d6c3482a8f7ba314658327183625d614f62214f16?apiKey=5be09b09533c4e64a196bf72011dcfdb&"
-                  className="w-16 aspect-square fill-white"
+                className="w-16 aspect-square fill-white"
+                src="/gardenIcon.svg"
+                alt="Imagen"
               />
             <div className="flex-auto">Mantenimiento de Jardines</div>
             </div>

@@ -4,11 +4,11 @@ const WhyChooseUs = () => {
       <div className="mt-20 w-full max-w-[1270px] max-md:mt-10 max-md:max-w-full">
         <div className="flex gap-5 max-md:flex-col max-md:gap-0 max-md:w-full">
             <div className="flex flex-col w-[41%] max-md:ml-0 max-md:w-full">
-            <img
-              className="flex-grow h-32 object-cover rounded-lg mt-5"
-              src="/assets/images/image3.png"
-              alt="Imagen 3"
-            />
+              <img
+                className="flex-grow h-32 object-cover rounded-lg mt-5"
+                src="/whyChooseUs.svg"
+                alt="Imagen"
+              />
             </div>
             <div className="flex flex-col ml-5 w-[59%] max-md:ml-0 max-md:w-full">
             <div className="flex flex-col px-5 text-3xl font-semibold leading-8 text-green-400 max-md:mt-10 max-md:max-w-full">
