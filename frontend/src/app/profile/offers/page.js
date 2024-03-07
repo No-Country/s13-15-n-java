@@ -4,8 +4,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { selectOffers } from "@/store/reducers/gardenerReducer";
 import { useSelector } from "react-redux";
+import { format } from 'date-fns';
+
 
 export default function Offers() {
+
+  const offers = useSelector(selectOffers)
+  console.log(offers); 
+
   const [searchTerm, setSearchTerm] = useState("");
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
@@ -28,17 +34,11 @@ export default function Offers() {
     setShowOptions(false);
   };
 
-  // const offers = useSelector(selectOffers)
-  // console.log(offers);
+
   
   return (
     <main className="flex flex-col w-4/5 bg-[#edfbf2] max-md:ml-0 max-md:w-full">
 
-      {/* {offers.map((offer) => {
-        return (
-          <p>{offer.nombre}</p>
-        )
-      })} */}
       <div className="flex flex-col grow mt-20 max-md:mt-10 max-md:max-w-full xs:mx-10 md:mx-16 xl:mx-20">
         <div className="flex flex-col w-[16%] text-3xl font-semibold max-md:ml-0 max-md:w-full">
           BÚSQUEDA
@@ -106,8 +106,72 @@ export default function Offers() {
       <div className="mt-4 w-full max-md:max-w-full">
         <div className="flex gap-12 max-md:flex-col max-md:gap-0">
 
-          {/* Card */}
-          <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full bg-[#BBF7D1] rounded-xl">
+          {/* Offers Cards */}
+          {offers.slice(0, 2).map((offer, index) => (
+            <div key={index} className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full bg-[#BBF7D1] rounded-xl">
+              <div className="flex flex-col grow px-12 py-5 w-full text-sm max-md:px-5 max-md:mt-10 max-md:max-w-full">
+                <div className="text-base font-medium font-semibold text-lg leading-8">
+                  {offer.nombre}
+                </div>
+                <div className="flex gap-1 justify-between mt-2 font-semibold leading-[120%]">
+                  <div className="flex gap-1"><Image src="/locationIcon.svg" width={12} height={312}></Image><Link className="text-xl" href="/profile"></Link></div>
+                  <div className="flex-auto text-sm">en {offer.direccion}</div>
+                </div>
+                <div className="flex gap-2 mt-3 whitespace-nowrap leading-[120%]">
+                  <div className="self-start font-semibold leading-[120%]">Grado de Complejidad:</div>
+                  <div className="flex-start">
+                    {offer.gradoComplejidad}
+                  </div>
+                </div>
+                <div className="flex gap-2 justify-between mt-2">
+                  <div className="self-start font-semibold leading-[120%]"> Descripción:</div>
+                  <div className="flex-auto leading-4">
+                    {offer.descripcion}
+                  </div>
+                </div>
+                <div className="flex gap-2 mt-3 whitespace-nowrap leading-[120%]">
+                  <div className="self-start font-semibold leading-[120%]">Fecha de expiración:</div>
+                  <div className="flex-start">
+                    {format(new Date(offer.fechaFin), "dd/MM/yyyy - HH:mm")}
+                  </div>
+                </div>
+                <div className="flex gap-2 mt-3 whitespace-nowrap leading-[120%]">
+                  <div className="self-start font-semibold leading-[120%]">Pago hasta:</div>
+                  <div className="flex-start">
+                    ${offer.precio}
+                  </div>
+                </div>
+                <div className="flex gap-2 mt-3 whitespace-nowrap leading-[120%]">
+                  <div className="self-start font-semibold leading-[120%]"> Propietario:</div>
+                  <div className="flex-start">
+                    {offer.usuario.nombre} {offer.usuario.apellido}
+                  </div>
+                  <div className="flex gap-2"><Image src="/userIcon1.svg" width={12} height={12}/></div>
+                </div>
+                <div className="flex gap-5 justify-between self-center mt-6 font-medium leading-[120%]">
+                  <div className="flex gap-2.5 justify-between px-3 py-2 rounded-md border border-solid border-[color:var(--Colors-Green,#53BC65)] text-cyan-950">
+                    <img
+                      loading="lazy"
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/4e3d20ff813c7d39af5e985ab67f3a1b044481f6bc526f12f9b3c089900f22c9?apiKey=5be09b09533c4e64a196bf72011dcfdb&"
+                      className="w-4 aspect-square"
+                    />
+                    <div>Ver fotos</div>
+                  </div>
+                  <div className="flex gap-2.5 justify-between px-5 py-2.5 text-emerald-50 whitespace-nowrap rounded-md bg-[#073A38]">
+                    <img
+                      loading="lazy"
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/70f72ac47b3cd8836d63a60f0baf7699588404119822d98c23869ba6ff1ae71a?apiKey=5be09b09533c4e64a196bf72011dcfdb&"
+                      className="my-auto w-2 aspect-square"
+                    />
+                    <div>Postular</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+
+
+          {/* <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full bg-[#BBF7D1] rounded-xl">
             <div className="flex flex-col grow px-12 py-5 w-full text-sm max-md:px-5 max-md:mt-10 max-md:max-w-full">
               <div className="text-base font-medium font-semibold text-lg leading-8">
                 Poda de arbustos
@@ -208,7 +272,11 @@ export default function Offers() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
+
+
+
+
 
         </div>
       </div>
