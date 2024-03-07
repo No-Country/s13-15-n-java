@@ -2,12 +2,14 @@
 import "./page.css";
 import Link from "next/link";
 import { loginUser } from "@/queries/usuario";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 export default function Login() {
   const router = useRouter();
-  if(localStorage.getItem('user')) router.push("/profile")
+  useEffect(() =>{
+    if(localStorage.getItem('user')) router.push("/profile")
+  }, [])
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isPassword,setIspassword] = useState(true);
