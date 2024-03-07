@@ -23,9 +23,9 @@ const SocialProof = () => {
               <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
                 <div className="flex grow gap-0 justify-between max-md:flex-wrap max-md:mt-5 max-md:max-w-full">
                   <img
-                    loading="lazy"
-                    src="/assets/images/image4.png"
                     className="z-10 my-auto w-20 rounded-full aspect-square"
+                    src="/Pic1.svg"
+                    alt="Imagen"
                   />
                   <div className="flex flex-col flex-1 px-14 py-8 bg-[#53BC65] rounded-2xl max-md:px-5 max-md:max-w-full">
                     <div className="text-base font-medium leading-6 text-white max-md:max-w-full">
@@ -40,29 +40,9 @@ const SocialProof = () => {
                       </div>
                       <div className="flex gap-1 my-auto">
                         <img
-                          loading="lazy"
-                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/edc9c825be2e63133affe4304d4fe4e45a882e14a3dc362ea188f4154a931047?"
-                          className="w-4 aspect-square"
-                        />
-                        <img
-                          loading="lazy"
-                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/edc9c825be2e63133affe4304d4fe4e45a882e14a3dc362ea188f4154a931047?"
-                          className="w-4 aspect-square"
-                        />
-                        <img
-                          loading="lazy"
-                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/edc9c825be2e63133affe4304d4fe4e45a882e14a3dc362ea188f4154a931047?"
-                          className="w-4 aspect-square"
-                        />
-                        <img
-                          loading="lazy"
-                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/edc9c825be2e63133affe4304d4fe4e45a882e14a3dc362ea188f4154a931047?"
-                          className="w-4 aspect-square"
-                        />
-                        <img
-                          loading="lazy"
-                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/edc9c825be2e63133affe4304d4fe4e45a882e14a3dc362ea188f4154a931047?"
-                          className="w-4 aspect-square"
+                          src="/StarsDark.svg"
+                          alt="img"
+                          className="w-30"
                         />
                       </div>
                     </div>
@@ -72,10 +52,10 @@ const SocialProof = () => {
               {/* Card 2 */}
               <div className="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
                 <div className="flex grow gap-0 justify-between max-md:flex-wrap max-md:mt-5 max-md:max-w-full">
-                <img
-                    loading="lazy"
-                    src="/assets/images/image6.png"
+                  <img
                     className="z-10 my-auto w-20 rounded-full aspect-square"
+                    src="/Pic3.svg"
+                    alt="Imagen"
                   />
                   <div className="flex flex-col flex-1 px-14 py-8 bg-[#53BC65] rounded-2xl max-md:px-5 max-md:max-w-full">
                     <div className="text-base font-medium leading-6 text-white max-md:max-w-full">
@@ -90,29 +70,9 @@ const SocialProof = () => {
                       </div>
                       <div className="flex gap-1 my-auto">
                         <img
-                          loading="lazy"
-                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/edc9c825be2e63133affe4304d4fe4e45a882e14a3dc362ea188f4154a931047?"
-                          className="w-4 aspect-square"
-                        />
-                        <img
-                          loading="lazy"
-                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/edc9c825be2e63133affe4304d4fe4e45a882e14a3dc362ea188f4154a931047?"
-                          className="w-4 aspect-square"
-                        />
-                        <img
-                          loading="lazy"
-                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/edc9c825be2e63133affe4304d4fe4e45a882e14a3dc362ea188f4154a931047?"
-                          className="w-4 aspect-square"
-                        />
-                        <img
-                          loading="lazy"
-                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/edc9c825be2e63133affe4304d4fe4e45a882e14a3dc362ea188f4154a931047?"
-                          className="w-4 aspect-square"
-                        />
-                        <img
-                          loading="lazy"
-                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/edc9c825be2e63133affe4304d4fe4e45a882e14a3dc362ea188f4154a931047?"
-                          className="w-4 aspect-square"
+                          src="/StarsDark.svg"
+                          alt="img"
+                          className="w-30"
                         />
                       </div>
                     </div>
@@ -128,10 +88,10 @@ const SocialProof = () => {
               {/* Card 3 */}
               <div className="hidden md:flex flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
                 <div className="flex grow gap-0 justify-between max-md:flex-wrap max-md:mt-5 max-md:max-w-full">
-                <img
-                    loading="lazy"
-                    src="/assets/images/image5.png"
+                  <img
                     className="z-10 my-auto w-20 rounded-full aspect-square"
+                    src="/Pic2.svg"
+                    alt="Imagen"
                   />
                   <div className="flex flex-col flex-1 px-14 py-8 bg-[#53BC65] rounded-2xl max-md:px-5 max-md:max-w-full">
                     <div className="text-base font-medium leading-6 text-white max-md:max-w-full">
@@ -146,29 +106,9 @@ const SocialProof = () => {
                       </div>
                       <div className="flex gap-1 my-auto">
                         <img
-                          loading="lazy"
-                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/edc9c825be2e63133affe4304d4fe4e45a882e14a3dc362ea188f4154a931047?"
-                          className="w-4 aspect-square"
-                        />
-                        <img
-                          loading="lazy"
-                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/edc9c825be2e63133affe4304d4fe4e45a882e14a3dc362ea188f4154a931047?"
-                          className="w-4 aspect-square"
-                        />
-                        <img
-                          loading="lazy"
-                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/edc9c825be2e63133affe4304d4fe4e45a882e14a3dc362ea188f4154a931047?"
-                          className="w-4 aspect-square"
-                        />
-                        <img
-                          loading="lazy"
-                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/edc9c825be2e63133affe4304d4fe4e45a882e14a3dc362ea188f4154a931047?"
-                          className="w-4 aspect-square"
-                        />
-                        <img
-                          loading="lazy"
-                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/edc9c825be2e63133affe4304d4fe4e45a882e14a3dc362ea188f4154a931047?"
-                          className="w-4 aspect-square"
+                          src="/StarsDark.svg"
+                          alt="img"
+                          className="w-30"
                         />
                       </div>
                     </div>
@@ -179,9 +119,9 @@ const SocialProof = () => {
               <div className="hidden md:flex flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
                 <div className="flex grow gap-0 justify-between max-md:flex-wrap max-md:mt-5 max-md:max-w-full">
                   <img
-                    loading="lazy"
-                    src="/assets/images/image7.png"
                     className="z-10 my-auto w-20 rounded-full aspect-square"
+                    src="/Pic4.svg"
+                    alt="Imagen"
                   />
                   <div className="flex flex-col flex-1 px-14 py-8 bg-[#53BC65] rounded-2xl max-md:px-5 max-md:max-w-full">
                     <div className="text-base font-medium leading-6 text-white max-md:max-w-full">
@@ -195,31 +135,11 @@ const SocialProof = () => {
                         <div className="mt-2 text-xs">Punta Arenas, Chile</div>
                       </div>
                       <div className="flex gap-1 my-auto">
-                        <img
-                          loading="lazy"
-                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/edc9c825be2e63133affe4304d4fe4e45a882e14a3dc362ea188f4154a931047?"
-                          className="w-4 aspect-square"
-                        />
-                        <img
-                          loading="lazy"
-                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/edc9c825be2e63133affe4304d4fe4e45a882e14a3dc362ea188f4154a931047?"
-                          className="w-4 aspect-square"
-                        />
-                        <img
-                          loading="lazy"
-                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/edc9c825be2e63133affe4304d4fe4e45a882e14a3dc362ea188f4154a931047?"
-                          className="w-4 aspect-square"
-                        />
-                        <img
-                          loading="lazy"
-                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/edc9c825be2e63133affe4304d4fe4e45a882e14a3dc362ea188f4154a931047?"
-                          className="w-4 aspect-square"
-                        />
-                        <img
-                          loading="lazy"
-                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/edc9c825be2e63133affe4304d4fe4e45a882e14a3dc362ea188f4154a931047?"
-                          className="w-4 aspect-square"
-                        />
+                      <img
+                        src="/StarsDark.svg"
+                        alt="img"
+                        className="w-30"
+                      />
                       </div>
                     </div>
                   </div>

@@ -16,8 +16,8 @@ const Blog = () => {
             <div className="bg-white rounded-md p-4 mx-10 lg:mx-6">
               <img
                 className="flex-grow mx-auto object-cover rounded-lg"
-                src="/assets/images/image8.png"
-                alt="Imagen 8"
+                src="/ourBlog1.svg"
+                alt="Imagen"
               />
               <div className="text-green-400">Conocimiento</div>
               <div className="text-3xl font-semibold mt-2">Uso de estiércol</div>
@@ -57,8 +57,8 @@ const Blog = () => {
             <div className="bg-white rounded-md p-4 mx-10 lg:mx-6">
               <img
                 className="flex-grow mx-auto object-cover rounded-lg"
-                src="/assets/images/image9.png"
-                alt="Imagen 9"
+                src="/ourBlog2.svg"
+                alt="Imagen"
               />
               <div className="text-green-400">Blog #14</div>
               <div className="text-3xl font-semibold mt-2">Cuidado de las flores</div>
@@ -98,8 +98,8 @@ const Blog = () => {
             <div className="bg-white rounded-md p-4 mx-10 lg:mx-6">
               <img
                 className="flex-grow mx-auto object-cover rounded-lg"
-                src="/assets/images/image10.png"
-                alt="Imagen 10"
+                src="/ourBlog3.svg"
+                alt="Imagen"
               />
               <div className="text-green-400">Noticias</div>
               <div className="text-3xl font-semibold mt-2">Garden Privacy</div>
