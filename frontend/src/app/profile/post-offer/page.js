@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import * as styles from "./styles.module.css"
 import { postOffer } from '@/queries/propietario';
-
+import { useRouter } from 'next/navigation';
 export default function PostOffer() {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
@@ -11,7 +11,7 @@ export default function PostOffer() {
   const [expirationDate, setExpirationDate] = useState('');
   const [paymentDue, setPaymentDue] = useState('');
   const [errors, setErrors] = useState({});
-
+  const router = useRouter()
   const handleSubmit = (e) => {
     e.preventDefault();
     const errors = {};
@@ -21,9 +21,6 @@ export default function PostOffer() {
     if (!description.trim()) {
       errors.description = 'Por favor ingresa una descripción.';
     }
-    // Aquí puedes agregar más validaciones según tus necesidades
-
-    // Si hay errores, detén el proceso y muestra los errores
     if (Object.keys(errors).length > 0) {
       setErrors(errors);
       return;
@@ -39,7 +36,10 @@ export default function PostOffer() {
       direccion: "direccion",
       precio: paymentDue
     }
+
     postOffer(offerBody, userToken).then((res) => {
+      console.log(res);
+      router.push("/profile/my-offers")
     })
   };
 

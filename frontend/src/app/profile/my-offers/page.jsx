@@ -90,10 +90,6 @@ export default function MyOffers() {
           <div className=" py-2 px-4 bg-[#BBF7D1] rounded-md" key={oferta.id}>
             <div className="flex  justify-between">
               <h3>{oferta.title}</h3>
-              <span className=" flex gap-2 items-center text-[]">
-                <Image src="/pencilGreen.svg" width={15} height={5} alt="img" />
-                <p className="text-[7px]">Editar perfil</p>
-              </span>
             </div>
             <div className="flex gap-2">
               <Image src="/ubication.svg" width={15} height={5} alt="img" />
