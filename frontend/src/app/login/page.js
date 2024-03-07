@@ -16,7 +16,6 @@ export default function Login() {
     e.preventDefault()
     await loginUser({email, password}).then((res) => {
       localStorage.setItem('user', JSON.stringify({userToken: res.data.token}));
-      console.log(res.data.token);
       router.push("/profile");
     }) 
   };

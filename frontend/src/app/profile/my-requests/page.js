@@ -6,7 +6,6 @@ import * as styles from "./styles.module.css"
 
 export default function MyRequests() {
   const offers = useSelector(selectOffers)
-  console.log(offers);
   const rows = offers.map((offer) => {
     let status;
     if(offer.statusOfertaActiva){

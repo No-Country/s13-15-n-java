@@ -10,7 +10,6 @@ import { format } from 'date-fns';
 export default function Offers() {
 
   const offers = useSelector(selectOffers)
-  console.log(offers); 
 
   const [searchTerm, setSearchTerm] = useState("");
   const handleSearch = (e) => {

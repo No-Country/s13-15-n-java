@@ -6,7 +6,6 @@ import Gardener from "@/components/profile/Gardener";
   
 export default function Registro() {
   const user = useSelector(selectUser);
-  console.log(user);
   if(!user) return <p>Cargando</p>
   if(user.rolId === 1){
     return (

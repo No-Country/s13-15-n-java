@@ -40,8 +40,6 @@ export default function PostOffer() {
       precio: paymentDue
     }
     postOffer(offerBody, userToken).then((res) => {
-      console.log(res);
-      console.log('Formulario enviado correctamente!');
     })
   };
 

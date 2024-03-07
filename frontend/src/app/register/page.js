@@ -51,8 +51,6 @@ export default function Register() {
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length === 0) {
-      // Enviar formulario si no hay errores
-      console.log('Formulario enviado:', formData);
       // Aquí podrías enviar los datos a tu servidor o hacer otra acción
       if(rol ==="jardinero"){
         registroJardinero(formData);
@@ -61,7 +59,6 @@ export default function Register() {
       }
       await loginUser({email: formData.correo, password: formData.clave}).then((res) => {
         localStorage.setItem('user', JSON.stringify({userToken: res.data.token}));
-        console.log(res.data.token);
         router.push("/profile");
       })
     }

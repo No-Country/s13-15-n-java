@@ -5,9 +5,6 @@ import { selectUser } from "@/store/reducers/userReducer";
 const Owner = () => {
   const userOff = useSelector(selectUser);
 
-  console.log(userOff);
-
-
   return (
     <main className="h-screen w-full  p-2 bg-[#EDFBF2] sm:w-[80%] md:p-16 ml-auto">
         <div className="flex items-center gap-2">

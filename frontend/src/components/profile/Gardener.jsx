@@ -5,7 +5,6 @@ import { selectUser } from "@/store/reducers/userReducer";
 const Gardener = () => {
 
   const userGardener = useSelector(selectUser);
-  console.log('Jardinero:', userGardener);
   
   return (
     <main className="flex flex-col w-4/5 bg-[#edfbf2] max-md:ml-0 max-md:w-full">
