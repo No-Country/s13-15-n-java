@@ -3,6 +3,7 @@ import { registroJardinero } from "@/queries/jardinero";
 import { registroPropietario } from "@/queries/propietario";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { loginUser } from "@/queries/usuario";
 import * as styles from "./styles.module.css"
 
 export default function Register() {
@@ -27,7 +28,7 @@ export default function Register() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const newErrors = {};
     // Validaciones básicas
@@ -58,7 +59,11 @@ export default function Register() {
       }else if(rol ==="propietario"){
         registroPropietario(formData);
       }
-      router.push("/profile");
+      await loginUser({email: formData.correo, password: formData.clave}).then((res) => {
+        localStorage.setItem('user', JSON.stringify({userToken: res.data.token}));
+        console.log(res.data.token);
+        router.push("/profile");
+      })
     }
   };
 
