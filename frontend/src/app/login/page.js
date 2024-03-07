@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 
 export default function Login() {
   const router = useRouter();
-
+  if(localStorage.getItem('user')) router.push("/profile")
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isPassword,setIspassword] = useState(true);
